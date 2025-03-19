@@ -11,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Npc
+  - Obstacle
+  - Sprite
+  - CameraBorder
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: backGround
+    uniqueID: 942141615
+    locked: 0
+  - name: underMask
+    uniqueID: 183326809
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: foreground
+    uniqueID: 2761224029
     locked: 0
