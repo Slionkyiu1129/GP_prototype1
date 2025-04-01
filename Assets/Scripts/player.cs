@@ -15,6 +15,9 @@ public class player : MonoBehaviour
     
     void Update()
     {
+
+        transform.position = new Vector3(Mathf.Round(transform.position.x/ 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
+
         if (!isMoving)
         {
             // 讀取輸入
