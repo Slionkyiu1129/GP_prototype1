@@ -14,7 +14,7 @@ public class noteReader : MonoBehaviour
             Debug.Log("pressed C");
             ShowNote();
         }
-        else if (noteUI.activeSelf && Input.GetKeyDown(KeyCode.C))
+        else if (noteUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             HideNote();
         }
@@ -30,7 +30,7 @@ public class noteReader : MonoBehaviour
         noteUI.SetActive(false);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Sprite"))
         {
@@ -39,7 +39,7 @@ public class noteReader : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Sprite"))
         {

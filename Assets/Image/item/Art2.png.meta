@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70cc68595b69f274eb0cb3d1d3446afe
+guid: 19bbcd382b254c3418b5c40290606c41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8834571706715641693
-    second: flowerShopOpen_0
+      213: 3233399730787976324
+    second: Art2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flowerShopOpen_0
+      name: Art2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1480
-        height: 872
+        width: 480
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d579081e824ba9a70800000000000000
-      internalID: 8834571706715641693
+      spriteID: 48406728ce75fdc20800000000000000
+      internalID: 3233399730787976324
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      flowerShopOpen_0: 8834571706715641693
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
