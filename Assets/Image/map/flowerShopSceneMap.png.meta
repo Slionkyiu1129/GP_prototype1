@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flowerShopSceneMap_0: 4370182357640556702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

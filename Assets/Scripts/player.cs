@@ -5,7 +5,10 @@ public class player : MonoBehaviour
 {
     private Vector2 moveDirection;
     private bool isMoving = false;
+
+
     public LayerMask obstacleLayer;
+    public float obstacleDetectionRays;
 
     void Start()
     {
@@ -17,6 +20,8 @@ public class player : MonoBehaviour
     {
 
         transform.position = new Vector3(Mathf.Round(transform.position.x/ 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
+
+        
 
         if (!isMoving)
         {
@@ -32,8 +37,7 @@ public class player : MonoBehaviour
             {
                 Vector2 targetPosition = (Vector2)transform.position + moveDirection;
 
-                // **先檢查目標位置是否有障礙物**
-                if (!Physics2D.Raycast(transform.position, moveDirection, 0.6f, obstacleLayer))
+                if (!Physics2D.Raycast(transform.position, moveDirection, obstacleDetectionRays, obstacleLayer))
                 {
                     StartCoroutine(Move(targetPosition));
                 }
