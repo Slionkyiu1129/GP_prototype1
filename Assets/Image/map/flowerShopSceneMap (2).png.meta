@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70c1bacf9d2d44fe9ad9a440016bece9
+guid: f1aabedfca1fce344b22937287429f12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9161645240248954025
-    second: shrimp_0
+      213: -4725384509686010297
+    second: flowerShopSceneMap (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shrimp_0
+      name: flowerShopSceneMap (2)_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 41
-        width: 98
-        height: 86
+        x: 0
+        y: 0
+        width: 4800
+        height: 4000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75310d8c13c4bd080800000000000000
-      internalID: -9161645240248954025
+      spriteID: 74e280913df0c6eb0800000000000000
+      internalID: -4725384509686010297
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shrimp_0: -9161645240248954025
+      flowerShopSceneMap (2)_0: -4725384509686010297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
