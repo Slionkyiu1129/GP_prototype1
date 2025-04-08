@@ -4,46 +4,39 @@ using UnityEngine;
 
 public class changeSprite : MonoBehaviour
 {
-
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] sprites; // 存多張圖
-    private bool inLine = false;
     
+    private SpriteRenderer spriteRenderer;
+    private bool isPlayerNear = false;
+    private bool isSpriteShown = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false; // 一開始隱藏圖片
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void ChangeSprite(int index)
-    {
-        if (index >= 0 && index < sprites.Length) 
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.U) && !isSpriteShown)
         {
-            spriteRenderer.sprite = sprites[index]; // 切換到指定的圖
+            spriteRenderer.enabled = true;
+            isSpriteShown = true; // 確保只會顯示一次
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision){
-        if(collision.gameObject.tag == "Sprite"){
-            //Debug.Log("InLine");
-            inLine = true;
-            ChangeSprite(1);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.tag == "Sprite"){
-            //Debug.Log("OutLine");
-            inLine = false;
-            ChangeSprite(0);
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNear = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNear = false;
         }
     }
 }

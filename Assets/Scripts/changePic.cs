@@ -66,4 +66,5 @@ public class changePic : MonoBehaviour
             isPlayerNear = false;
         }
     }
+
 }
