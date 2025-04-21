@@ -76,7 +76,7 @@
 
 === npc ===
 我是小蜜 #speaker:mi #portrait:yellow_happy #layout:right
-+ [你在這裡做啥] {!"啦啦"|"嘻嘻"|"呵呵"} 
++ [你在這裡做啥] {~"啦啦"|"嘻嘻"|"呵呵"} 
     -> npc
 + [不理你了] #speaker:??? #portrait:default  #layout:left -> start_npc
      
