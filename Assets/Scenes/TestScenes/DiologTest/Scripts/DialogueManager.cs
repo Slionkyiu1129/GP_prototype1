@@ -4,9 +4,13 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+// uning Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
 {
+
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -26,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
+    private DialogueVariables dialogueVariables;
 
     private void Awake()
     {
@@ -34,6 +39,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+        // dialogueVariables = new DialogueVariables(loadGlobalsJSON.filePath);
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance()
@@ -77,6 +84,7 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        dialogueVariables.StartListening(currentStory);
 
         ContinueStory();
     }
@@ -84,6 +92,8 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
+
+        dialogueVariables.StopListening(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -134,7 +144,7 @@ public class DialogueManager : MonoBehaviour
                     portraitAnimator.Play(tagValue);
                     break;
                 case LAYOUT_TAG:
-                    Debug.Log("layout="+tagValue);
+                    Debug.Log("layout=" + tagValue);
                     //layoutAnimator.Play(tagValue);
                     break;
                 default:
@@ -188,6 +198,17 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
         ContinueStory();
+    }
+    
+    public Ink.Runtime.Object GetVariableState(string variableName) 
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null) 
+        {
+            Debug.LogWarning("Ink Variable was found to be null: " + variableName);
+        }
+        return variableValue;
     }
 
 }
