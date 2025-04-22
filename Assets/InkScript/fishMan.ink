@@ -23,6 +23,6 @@ INCLUDE globals.ink
 ->END
 
 === alreadyTalkFirst ===
-要給就先幫我整理漁貨 #speaker:漁夫 #portrait:yellow_happy #layout:right
+要給就先幫我整理漁貨 #speaker:漁夫 #portrait:yellow_neutral #layout:right
 我空不出手來
 ->END

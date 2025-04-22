@@ -199,16 +199,23 @@ public class DialogueManager : MonoBehaviour
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
         ContinueStory();
     }
-    
-    public Ink.Runtime.Object GetVariableState(string variableName) 
+
+    public Ink.Runtime.Object GetVariableState(string variableName)
     {
         Ink.Runtime.Object variableValue = null;
         dialogueVariables.variables.TryGetValue(variableName, out variableValue);
-        if (variableValue == null) 
+        if (variableValue == null)
         {
             Debug.LogWarning("Ink Variable was found to be null: " + variableName);
         }
         return variableValue;
+    }
+    
+    // This method will get called anytime the application exits.
+    // Depending on your game, you may want to save variable state in other places.
+    public void OnApplicationQuit()
+    {
+        dialogueVariables.SaveVariables();
     }
 
 }
