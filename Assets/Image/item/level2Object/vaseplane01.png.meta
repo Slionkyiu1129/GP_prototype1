@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 474ab05e182f14090b6b920f485bbc10
+guid: db00e81feea3ddb4ea0c4acdeb6e3bbf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5574688944136208963
-    second: hospitalMap2_0
+      213: 3260580158513689267
+    second: vaseplane01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hospitalMap2_0
+      name: vaseplane01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1000
+        width: 157
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbdb677f0f9b2a2b0800000000000000
-      internalID: -5574688944136208963
+      spriteID: 3b235edf068ef3d20800000000000000
+      internalID: 3260580158513689267
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      hospitalMap2_0: -5574688944136208963
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

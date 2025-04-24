@@ -26,7 +26,7 @@ public class changePic : MonoBehaviour
     void Update()
     {
         // "O" can switch the sprite
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.O))
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.Space))
         {
             ToggleSprite();
         }

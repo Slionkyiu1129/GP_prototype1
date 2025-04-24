@@ -8,6 +8,10 @@ public class grabItem : MonoBehaviour
     public Transform grabPoint; // 設一個位置放抓起來的東西
     private GameObject nearbyObject; // 儲存碰到的物件
     private GameObject grabbedObject; // 抓著的物件
+    public Transform[] snapPoints; // 在 Inspector 指派你設的放置點們
+    public float snapRange = 0.5f; // 設定一個吸附範圍
+    private Transform currentHighlightedPoint;
+    public checkVaseCorrectManager checkVaseCorrectManager;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,6 +31,11 @@ public class grabItem : MonoBehaviour
 
     private void Update()
     {
+        // 檢查拿著物件時，是否有靠近吸附點
+        if (grabbedObject != null)
+        {
+            HighlightNearestSnapPoint(grabbedObject.transform.position);
+        }
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             if (grabbedObject == null && nearbyObject != null)
@@ -37,62 +46,66 @@ public class grabItem : MonoBehaviour
                 grabbedObject.transform.position = grabPoint.position;
                 grabbedObject.transform.SetParent(transform);
             }
+                
             else if (grabbedObject != null)
             {
                 // 放下物件
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.transform.SetParent(null);
+                SnapToNearestPoint(grabbedObject);
                 grabbedObject = null;
+                // 放下時清除 highlight
+                if (currentHighlightedPoint != null)
+                {
+                    currentHighlightedPoint.GetComponent<snapPointFeedback>().Highlight(false);
+                    currentHighlightedPoint = null;
+                }
+                checkVaseCorrectManager.CheckAllPots();
             }
         }
     }
-
-    /*
-    [SerializeField]
-    private Transform grabPoint;
-
-    [SerializeField]
-    private Transform rayPoint;
-    [SerializeField]
-    private float rayDistance;
-
-    private GameObject grabbedObject;
-    private int layerIndex;
-
-    private void Start()
+    private void HighlightNearestSnapPoint(Vector2 position)
     {
-        layerIndex = LayerMask.NameToLayer("Sprite");
-    }
+        float minDistance = Mathf.Infinity;
+        Transform nearest = null;
 
-    private void Update()
+        foreach (Transform point in snapPoints)
+        {
+            float distance = Vector2.Distance(position, point.position);
+            if (distance < snapRange && distance < minDistance)
+            {
+                minDistance = distance;
+                nearest = point;
+            }
+        }
+
+        if (nearest != currentHighlightedPoint)
+        {
+            if (currentHighlightedPoint != null)
+                currentHighlightedPoint.GetComponent<snapPointFeedback>().Highlight(false);
+            if (nearest != null)
+                nearest.GetComponent<snapPointFeedback>().Highlight(true);
+            currentHighlightedPoint = nearest;
+        }
+    }
+    private void SnapToNearestPoint(GameObject obj)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
-        
-        if (hitInfo.collider!=null &&hitInfo.collider.gameObject.layer == layerIndex)
-        {
-            Debug.Log("命中了：" + hitInfo.collider.name);
-            //grab object
-            if(Keyboard.current.spaceKey.wasPressedThisFrame && grabbedObject == null)
-            {
-                grabbedObject = hitInfo.collider.gameObject;
-                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
-                grabbedObject.transform.position = grabPoint.position;
-                grabbedObject.transform.SetParent(transform);
-            }
-            //release object
-            else if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            {
-                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-                grabbedObject.transform.SetParent(null);
-                grabbedObject = null;
-            }
-        }
-        else
-        {
-            Debug.Log("沒命中，可能距離太遠或方向不對");
-        }
+        float minDistance = Mathf.Infinity;
+        Transform closestPoint = null;
 
-        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
+        foreach (Transform point in snapPoints)
+        {
+            float distance = Vector2.Distance(obj.transform.position, point.position);
+            if (distance < snapRange && distance < minDistance)
+            {
+                minDistance = distance;
+                closestPoint = point;
+            }
+        }
+    
+        if (closestPoint != null)
+        {
+            obj.transform.position = closestPoint.position;
+        }
     }
-    */
 }
