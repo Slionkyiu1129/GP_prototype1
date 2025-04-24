@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vaseplane01_0: 3260580158513689267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

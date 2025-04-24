@@ -16,6 +16,7 @@ public class saveManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             savePath = Path.Combine(Application.persistentDataPath, "save.json");
+            Debug.Log("檔案存到：" + savePath);
             LoadGame();
         }
         else
@@ -38,6 +39,7 @@ public class saveManager : MonoBehaviour
             string json = File.ReadAllText(savePath);
             currentSave = JsonUtility.FromJson<saveData>(json);
             Debug.Log("Game Loaded");
+            Debug.Log("檔案存到：" + savePath);
         }
         else
         {

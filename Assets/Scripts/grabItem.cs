@@ -13,6 +13,12 @@ public class grabItem : MonoBehaviour
     private Transform currentHighlightedPoint;
     public checkVaseCorrectManager checkVaseCorrectManager;
 
+    public AudioClip placeSound;
+    private AudioSource audioSource;
+    private void Start()
+    {   
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Sprite"))
@@ -54,6 +60,11 @@ public class grabItem : MonoBehaviour
                 grabbedObject.transform.SetParent(null);
                 SnapToNearestPoint(grabbedObject);
                 grabbedObject = null;
+                
+                if (placeSound != null)
+                {
+                    audioSource.PlayOneShot(placeSound);
+                }
                 // 放下時清除 highlight
                 if (currentHighlightedPoint != null)
                 {
