@@ -9,13 +9,22 @@ public class DialogueVariables : MonoBehaviour
     private Story globalVariablesStory;
     private const string saveVariablesKey = "INK_VARIABLES";
 
-    public DialogueVariables(TextAsset loadGlobalsJSON) 
+    // private void Start()
+    // {
+    //     // 確保場景載入時讀取已保存的變數
+    //     if (PlayerPrefs.HasKey(saveVariablesKey))
+    //     {
+    //         LoadVariables();
+    //     }
+    // }
+
+    public DialogueVariables(TextAsset loadGlobalsJSON)
     {
         // create the story
         globalVariablesStory = new Story(loadGlobalsJSON.text);
         // if we have saved data, load it
         if (PlayerPrefs.HasKey(saveVariablesKey))
-        { 
+        {
             string jsonState = PlayerPrefs.GetString(saveVariablesKey);
             globalVariablesStory.state.LoadJson(jsonState);
         }
@@ -30,9 +39,9 @@ public class DialogueVariables : MonoBehaviour
         }
     }
 
-    public void SaveVariables() 
+    public void SaveVariables()
     {
-        if (globalVariablesStory != null) 
+        if (globalVariablesStory != null)
         {
             // Load the current state of all of our variables to the globals story
             VariablesToStory(globalVariablesStory);
@@ -42,34 +51,51 @@ public class DialogueVariables : MonoBehaviour
         }
     }
 
-    public void StartListening(Story story) 
+    public void StartListening(Story story)
     {
         // it's important that VariablesToStory is before assigning the listener!
         VariablesToStory(story);
         story.variablesState.variableChangedEvent += VariableChanged;
     }
 
-    public void StopListening(Story story) 
+    public void StopListening(Story story)
     {
         story.variablesState.variableChangedEvent -= VariableChanged;
     }
 
-    private void VariableChanged(string name, Ink.Runtime.Object value) 
+    private void VariableChanged(string name, Ink.Runtime.Object value)
     {
         // only maintain variables that were initialized from the globals ink file
-        if (variables.ContainsKey(name)) 
+        if (variables.ContainsKey(name))
         {
             variables.Remove(name);
             variables.Add(name, value);
         }
     }
 
-    private void VariablesToStory(Story story) 
+    private void VariablesToStory(Story story)
     {
-        foreach(KeyValuePair<string, Ink.Runtime.Object> variable in variables) 
+        foreach (KeyValuePair<string, Ink.Runtime.Object> variable in variables)
         {
             story.variablesState.SetGlobal(variable.Key, variable.Value);
         }
     }
+    
+    // public void LoadVariables()
+    // {
+    //     if (globalVariablesStory != null && PlayerPrefs.HasKey(saveVariablesKey))
+    //     {
+    //         string jsonState = PlayerPrefs.GetString(saveVariablesKey);
+    //         globalVariablesStory.state.LoadJson(jsonState);
+            
+    //         // 重新初始化變數字典
+    //         variables.Clear();
+    //         foreach (string name in globalVariablesStory.variablesState)
+    //         {
+    //             Ink.Runtime.Object value = globalVariablesStory.variablesState.GetVariableWithName(name);
+    //             variables[name] = value;
+    //         }
+    //     }
+    // }
 
 }

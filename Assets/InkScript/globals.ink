@@ -1,2 +1,4 @@
 VAR have_talk_fishman = ""
-VAR flyerNum = 10
+VAR have_talk_npcTest = ""
+VAR haveGetFlyer = ""
+VAR flyerNum = -1
