@@ -6,4 +6,13 @@ using UnityEngine;
 public class saveData
 {
     public bool potPuzzleFinished = false;
+    public List<LightSaveData> lights = new List<LightSaveData>();
+}
+
+[System.Serializable]
+public class LightSaveData
+{
+    public string lightName;
+    public bool isLightOn;
+    public bool isFirstSpriteActive;
 }

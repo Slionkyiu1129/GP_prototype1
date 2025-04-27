@@ -46,4 +46,22 @@ public class saveManager : MonoBehaviour
             currentSave = new saveData();
         }
     }
+    
+    public void SaveLightState(string lightName, bool isLightOn, bool isFirstSpriteActive)
+    {
+        LightSaveData lightData = currentSave.lights.Find(l => l.lightName == lightName);
+        if (lightData == null)
+        {
+            lightData = new LightSaveData();
+            lightData.lightName = lightName;
+            currentSave.lights.Add(lightData);
+        }
+        lightData.isLightOn = isLightOn;
+        lightData.isFirstSpriteActive = isFirstSpriteActive;
+    }
+
+    public LightSaveData GetLightState(string lightName)
+    {
+        return currentSave.lights.Find(l => l.lightName == lightName);
+    }
 }

@@ -16,10 +16,18 @@ public class changePic : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = firstSprite;
+        LightSaveData savedLight = saveManager.Instance.GetLightState(gameObject.name);
+        if (savedLight != null)
+        {
+            isFirstSpriteActive = savedLight.isFirstSpriteActive;
+            isLightActive = savedLight.isLightOn;
+        }
+
+        spriteRenderer.sprite = isFirstSpriteActive ? firstSprite : secondSprite;
+
         if (sceneLight != null)
         {
-            sceneLight.enabled = true;
+            sceneLight.enabled = isLightActive;
         }
     }
 
@@ -46,14 +54,16 @@ public class changePic : MonoBehaviour
 
         if (sceneLight != null)
         {
-            isLightActive = !isLightActive; // 切換 Light 狀態
-            sceneLight.enabled = isLightActive; // 設定 Light 開關
+            isLightActive = !isLightActive;
+            sceneLight.enabled = isLightActive;
         }
+        saveManager.Instance.SaveLightState(gameObject.name, isLightActive, isFirstSpriteActive);
+        saveManager.Instance.SaveGame();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // 確保是玩家進入
+        if (other.CompareTag("Player"))
         {
             isPlayerNear = true;
         }

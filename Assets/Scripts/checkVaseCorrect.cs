@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class checkVaseCorrect : MonoBehaviour
 {
-    public Transform correctSnapPoint; // 指定正確的吸附位置
-    public float tolerance = 0.1f; // 容差範圍內算正確
+    public Transform correctSnapPoint;
+    public float tolerance = 0.1f;
 
     public bool IsCorrectlyPlaced()
     {
