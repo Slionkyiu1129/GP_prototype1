@@ -36,6 +36,8 @@ public class CharacterController2D_addGrid : MonoBehaviour
 
     void Update()
     {
+        // Debug.DrawRay(transform.position, moveDirection, Color.red);
+        Debug.DrawRay((Vector2)transform.position + new Vector2(0, -0.25f), moveDirection, Color.red);
         transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
     }
 
@@ -63,7 +65,12 @@ public class CharacterController2D_addGrid : MonoBehaviour
             {
                 Vector2 targetPosition = (Vector2)transform.position + moveDirection;
 
-                if (!Physics2D.Raycast(transform.position, moveDirection, obstacleDetectionRays, obstacleLayer))
+
+                // if (!Physics2D.Raycast(transform.position, moveDirection, obstacleDetectionRays, obstacleLayer))
+                // {
+                //     StartCoroutine(Move(targetPosition));
+                // }
+                if (!Physics2D.Raycast((Vector2)transform.position + new Vector2(0, -0.25f), moveDirection, obstacleDetectionRays, obstacleLayer))
                 {
                     StartCoroutine(Move(targetPosition));
                 }
