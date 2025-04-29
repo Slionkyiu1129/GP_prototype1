@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private DialogueVariables dialogueVariables;
+    private bool hasAddedFlyer = false;
 
     private void Awake()
     {
@@ -52,6 +53,22 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        InventoryManager.Instance.SyncFlyerFromDialogue();
+        int flyerNum = 0;
+            Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+            if (flyerNumObj != null)
+            {
+                int.TryParse(flyerNumObj.ToString(), out flyerNum);
+            }
+
+            InventoryManager inventory = InventoryManager.Instance;
+        
+            if (flyerNum > 0 && !hasAddedFlyer) 
+            {
+                inventory.AddItem("flyer", flyerNum); 
+                hasAddedFlyer = true;
+            }
+            InventoryManager.Instance.SyncFlyerFromDialogue();
 
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -65,6 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        InventoryManager.Instance.SyncFlyerFromDialogue();
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying)
         {
@@ -76,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.currentChoices.Count == 0 && InputManager.GetInstance().GetSubmitPressed())
         {
             ContinueStory();
+            InventoryManager.Instance.SyncFlyerFromDialogue();
         }
     }
 
@@ -110,14 +129,52 @@ public class DialogueManager : MonoBehaviour
             DisplayChoices();
             // handle tags
             HandleTags(currentStory.currentTags);
+            int flyerNum = 0;
+            Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+            if (flyerNumObj != null)
+            {
+                int.TryParse(flyerNumObj.ToString(), out flyerNum);
+            }
 
+            InventoryManager inventory = InventoryManager.Instance;
+        
+            if (flyerNum > 0 && !hasAddedFlyer) 
+            {
+                inventory.AddItem("flyer", flyerNum); 
+                hasAddedFlyer = true;
+            }
+            inventory.SyncFlyerFromDialogue();
         }
         else
         {
+            InventoryManager.Instance.SyncFlyerFromDialogue();
             StartCoroutine(ExitDialogueMode());
         }
     }
+    // 取得 flyer 數量
+    public int GetFlyerNum()
+    {
+        Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+        if (flyerNumObj != null && int.TryParse(flyerNumObj.ToString(), out int flyerNum))
+        {
+            return flyerNum;
+        }
+        return 0;
+    }
 
+    // 改變 flyer 數量 (delta 可以是 +1 或 -1)
+    public void ChangeFlyerNum(int delta)
+    {
+        if (currentStory != null)
+        {
+            int currentFlyerNum = GetFlyerNum();
+            int newFlyerNum = currentFlyerNum + delta;
+            currentStory.variablesState["flyerNum"] = newFlyerNum;
+
+            // 加這一行！改完 Ink 的數量後馬上同步到 Inventory
+            InventoryManager.Instance.UpdateFlyerAmount(newFlyerNum);
+        }
+    }
     private void HandleTags(List<string> currentTags)
     {
         // loop through each tag and handle it accordingly
