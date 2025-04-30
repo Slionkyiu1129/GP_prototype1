@@ -58,9 +58,21 @@ public class InventoryManager : MonoBehaviour
     {
         ItemList.Remove(oldItem);
     }
+
     public void AddItem(string itemName, int amount)
     {
-        // 先從 Resources 找到對應的 Item 資源
+        // 檢查 ItemList 中是否已經有這個 item
+        foreach (Item item in ItemList)
+        {
+            if (item.ItemName == itemName)
+            {
+                item.amount += amount;
+                onInventoryCallBack?.Invoke();
+                return;
+            }
+        }
+
+        // 如果沒有，新增新的 item
         Item itemTemplate = Resources.Load<Item>("Items/" + itemName);
 
         if (itemTemplate == null)
@@ -69,15 +81,13 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < amount; i++)
-        {
-            // 複製一份出來
-            Item newItem = Instantiate(itemTemplate);
-            ItemList.Add(newItem);
-        }
+        Item newItem = Instantiate(itemTemplate);
+        newItem.amount = amount;
+        ItemList.Add(newItem);
 
         onInventoryCallBack?.Invoke();
     }
+
     public void SyncFlyerFromDialogue()
     {
         if (dialogueManager != null)
@@ -88,17 +98,48 @@ public class InventoryManager : MonoBehaviour
         onInventoryCallBack?.Invoke();
     }
 
-    public void UpdateFlyerAmount(int amount)
+    //public void UpdateFlyerAmount(int amount)
+    //{
+    //    // 把 ItemList 裡 flyer 的數量改掉
+    //    foreach (Item item in ItemList)
+    //    {
+    //        if (item.ItemName == "flyer")
+    //        {
+    //            item.amount = amount;
+    //            onInventoryCallBack?.Invoke();
+    //            return;
+    //        }
+    //    }
+    //}
+
+    public void UpdateFlyerAmount(int newAmount)
     {
-        // 把 ItemList 裡 flyer 的數量改掉
+        Debug.Log("GOING ---> UpdateFlyerAmount(int newAmount)");
         foreach (Item item in ItemList)
         {
+            if (item.ItemName == null)
+            {
+                Debug.Log("CANT FIND item.ItemName");
+            }
+            Debug.Log("ItemName = " + item.ItemName);
             if (item.ItemName == "flyer")
             {
-                item.amount = amount;
+                item.amount = newAmount;
+                Debug.Log("Flyer Amount = "+ item.amount);
                 onInventoryCallBack?.Invoke();
                 return;
             }
         }
+
+        // 如果沒有 flyer，新增一個
+        //Item itemTemplate = Resources.Load<Item>("Items/flyer");
+        //if (itemTemplate != null)
+        //{
+        //Debug.Log("itemTemplate != null");
+        //Item newItem = Instantiate(itemTemplate);
+        //newItem.amount = newAmount;
+        //ItemList.Add(newItem);
+        //onInventoryCallBack?.Invoke();
+        // }
     }
 }

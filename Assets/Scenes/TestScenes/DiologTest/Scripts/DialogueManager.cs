@@ -31,7 +31,11 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
     private DialogueVariables dialogueVariables;
+
+    //Variables For FlyerNum to Inventory
     private bool hasAddedFlyer = false;
+    private int lastFlyerNum = -1;
+    private int flyerNum = 0;
 
     private void Awake()
     {
@@ -53,22 +57,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        InventoryManager.Instance.SyncFlyerFromDialogue();
-        int flyerNum = 0;
-            Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
-            if (flyerNumObj != null)
-            {
-                int.TryParse(flyerNumObj.ToString(), out flyerNum);
-            }
-
-            InventoryManager inventory = InventoryManager.Instance;
-        
-            if (flyerNum > 0 && !hasAddedFlyer) 
-            {
-                inventory.AddItem("flyer", flyerNum); 
-                hasAddedFlyer = true;
-            }
-            InventoryManager.Instance.SyncFlyerFromDialogue();
+        //Get Flyer to InventorySystem
+        FlyerNumToInventory();
 
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -82,19 +72,18 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        InventoryManager.Instance.SyncFlyerFromDialogue();
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying)
         {
             return;
         }
-
+        // Check if the FlyerNum is Changed
+        CheckFlyerNumChanged();
         // handle continuing to the next line in the dialogue when submit is pressed
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (currentStory.currentChoices.Count == 0 && InputManager.GetInstance().GetSubmitPressed())
         {
             ContinueStory();
-            InventoryManager.Instance.SyncFlyerFromDialogue();
         }
     }
 
@@ -129,52 +118,16 @@ public class DialogueManager : MonoBehaviour
             DisplayChoices();
             // handle tags
             HandleTags(currentStory.currentTags);
-            int flyerNum = 0;
-            Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
-            if (flyerNumObj != null)
-            {
-                int.TryParse(flyerNumObj.ToString(), out flyerNum);
-            }
-
-            InventoryManager inventory = InventoryManager.Instance;
-        
-            if (flyerNum > 0 && !hasAddedFlyer) 
-            {
-                inventory.AddItem("flyer", flyerNum); 
-                hasAddedFlyer = true;
-            }
-            inventory.SyncFlyerFromDialogue();
+            //Get Flyer to InventorySystem
+            FlyerNumToInventory();
         }
         else
         {
-            InventoryManager.Instance.SyncFlyerFromDialogue();
             StartCoroutine(ExitDialogueMode());
         }
     }
-    // 取得 flyer 數量
-    public int GetFlyerNum()
-    {
-        Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
-        if (flyerNumObj != null && int.TryParse(flyerNumObj.ToString(), out int flyerNum))
-        {
-            return flyerNum;
-        }
-        return 0;
-    }
+    
 
-    // 改變 flyer 數量 (delta 可以是 +1 或 -1)
-    public void ChangeFlyerNum(int delta)
-    {
-        if (currentStory != null)
-        {
-            int currentFlyerNum = GetFlyerNum();
-            int newFlyerNum = currentFlyerNum + delta;
-            currentStory.variablesState["flyerNum"] = newFlyerNum;
-
-            // 加這一行！改完 Ink 的數量後馬上同步到 Inventory
-            InventoryManager.Instance.UpdateFlyerAmount(newFlyerNum);
-        }
-    }
     private void HandleTags(List<string> currentTags)
     {
         // loop through each tag and handle it accordingly
@@ -210,7 +163,6 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-
 
     private void DisplayChoices()
     {
@@ -275,4 +227,70 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables.SaveVariables();
     }
 
+    //-----Fucntion For FlyerNum To Inventory-----
+    // flyerNum to Inventory ---> ContinueStory() and Start()
+    private void FlyerNumToInventory()
+    {
+        Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+        Ink.Runtime.Object hasGetFlyerObj = GetVariableState("haveGetFlyer");
+
+        //Check if there is flyerNumObj and hasGetFlyerObj
+        if (flyerNumObj == null || hasGetFlyerObj == null)
+        {
+            return;
+        }
+        int.TryParse(flyerNumObj.ToString(), out flyerNum);
+        
+        Debug.Log("Check1_hasAddedFlyer =" + hasAddedFlyer);
+        
+        bool shouldAddFlyer = (hasGetFlyerObj != null && hasGetFlyerObj.ToString().ToLower() == "true");
+
+        if (flyerNum > 0 && shouldAddFlyer && !hasAddedFlyer)
+        {
+            InventoryManager.Instance.AddItem("flyer", flyerNum);
+            hasAddedFlyer = true;
+            Debug.Log("Check2_hasAddedFlyer =" + hasAddedFlyer);
+        }
+    }
+
+    // Check if the FlyerNum is Changed ---> Update()
+    private void CheckFlyerNumChanged()
+    {
+        Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+        if (flyerNumObj == null) return;
+
+        int currentFlyerNum = GetFlyerNum();
+        if (currentFlyerNum != lastFlyerNum)
+        {
+            Debug.Log("Update Change FlyerNum" + currentFlyerNum);
+            InventoryManager.Instance.UpdateFlyerAmount(currentFlyerNum);
+            lastFlyerNum = currentFlyerNum;
+        }
+    }
+
+    // Get flyer Num
+    public int GetFlyerNum()
+    {
+        Ink.Runtime.Object flyerNumObj = GetVariableState("flyerNum");
+        if (flyerNumObj != null && int.TryParse(flyerNumObj.ToString(), out int flyerNum))
+        {
+            return flyerNum;
+        }
+        return 0;
+    }
+
+    // Change flyer Num (delta can be -1 or +1)
+    public void ChangeFlyerNum(int delta)
+    {
+        if (currentStory != null)
+        {
+            int currentFlyerNum = GetFlyerNum();
+            int newFlyerNum = currentFlyerNum + delta;
+            currentStory.variablesState["flyerNum"] = newFlyerNum;
+
+            // 加這一行！改完 Ink 的數量後馬上同步到 Inventory
+            InventoryManager.Instance.UpdateFlyerAmount(newFlyerNum);
+        }
+    }
+    //-----End-----
 }

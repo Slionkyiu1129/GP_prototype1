@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: flyer
   m_EditorClassIdentifier: 
   ItemID: 0
-  ItemName: 
+  ItemName: flyer
+  amount: 0
   ItemImage: {fileID: 0}
