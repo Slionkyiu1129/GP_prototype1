@@ -15,5 +15,5 @@ MonoBehaviour:
   ItemID: 0
   ItemName: Camera
   amount: 1
-  ItemImage: {fileID: 8966945178157639174, guid: a5ba6014e798b46699462950cc8c1854, type: 3}
+  ItemImage: {fileID: -4566190091907096745, guid: 0fe17e4fa97feee409a3cf322d0f949a, type: 3}
   description: This is Camera.

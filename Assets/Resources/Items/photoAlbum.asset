@@ -15,5 +15,5 @@ MonoBehaviour:
   ItemID: 0
   ItemName: PhotoAlbum
   amount: 1
-  ItemImage: {fileID: -7608026318298583230, guid: 460b22b089f5b47a0b1f7c6ff34a7f3d, type: 3}
+  ItemImage: {fileID: -4036741461985269918, guid: e5bcf4bc0bf3b5247be45d2e7714a1e5, type: 3}
   description: This is Photo Album.

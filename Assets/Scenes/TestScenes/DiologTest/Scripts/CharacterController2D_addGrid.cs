@@ -21,11 +21,11 @@ public class CharacterController2D_addGrid : MonoBehaviour
     public LayerMask obstacleLayer;
     public float obstacleDetectionRays;
 
-
+    private Animator animator;
 
     private void Awake()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -39,6 +39,16 @@ public class CharacterController2D_addGrid : MonoBehaviour
         // Debug.DrawRay(transform.position, moveDirection, Color.red);
         Debug.DrawRay((Vector2)transform.position + new Vector2(0, -0.25f), moveDirection, Color.red);
         transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
+        if (moveDirection != Vector2.zero)
+        {
+            animator.SetFloat("MoveX", moveDirection.x);
+            animator.SetFloat("MoveY", moveDirection.y);
+            animator.SetFloat("Speed", 1f); // 你可以根據 isMoving 調整
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0f);
+        }
     }
 
     private void FixedUpdate()
@@ -69,7 +79,14 @@ public class CharacterController2D_addGrid : MonoBehaviour
             {
                 Vector2 targetPosition = (Vector2)transform.position + moveDirection;
 
-
+                if (moveDirection.x > 0)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);  // 朝右
+                }
+                else if (moveDirection.x < 0)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1); // 朝左（鏡像）
+                }
                 // if (!Physics2D.Raycast(transform.position, moveDirection, obstacleDetectionRays, obstacleLayer))
                 // {
                 //     StartCoroutine(Move(targetPosition));
