@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd9a62493729034e942f0c5d9013325, type: 3}
-  m_Name: flyer
+  m_Name: photoAlbum
   m_EditorClassIdentifier: 
   ItemID: 0
-  ItemName: flyer
-  amount: 0
-  ItemImage: {fileID: 5440390084351408723, guid: d095399cc217e39448303bf84539d16f, type: 3}
-  description: This is Flyer.
+  ItemName: PhotoAlbum
+  amount: 1
+  ItemImage: {fileID: -7608026318298583230, guid: 460b22b089f5b47a0b1f7c6ff34a7f3d, type: 3}
+  description: This is Photo Album.

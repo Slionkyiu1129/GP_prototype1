@@ -47,6 +47,10 @@ public class CharacterController2D_addGrid : MonoBehaviour
         {
             return;
         }
+        if (TogglePack.isInventoryOpen)
+        {
+            return;
+        }
 
         HandleHorizontalMovement();
 

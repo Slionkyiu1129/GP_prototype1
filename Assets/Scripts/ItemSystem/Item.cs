@@ -9,6 +9,8 @@ public class Item : ScriptableObject
     public string ItemName;
     public int amount;
     public Sprite ItemImage;
+    public string description;
+
     public virtual void UseItem()
     {
         //Method to use item

@@ -6,12 +6,14 @@ public class TogglePack : MonoBehaviour
 {
     public GameObject inventoryUI;
     public player player;
+    public static bool isInventoryOpen = false;
 
     void Start()
     {
         //Just ensure that UI is working correct
         inventoryUI.SetActive(true);  
         inventoryUI.SetActive(false);
+        isInventoryOpen = false;
     }
 
     void Update()
@@ -28,7 +30,7 @@ public class TogglePack : MonoBehaviour
     {
         bool isActive = inventoryUI.activeSelf;
         inventoryUI.SetActive(!isActive);
-
+        isInventoryOpen = !isActive;
         // Ensure that Player cant move when pack is opening
         if (player != null)
         {
