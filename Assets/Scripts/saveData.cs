@@ -6,6 +6,7 @@ using UnityEngine;
 public class saveData
 {
     public bool potPuzzleFinished = false;
+    public bool fishPuzzleFinished = false;
     public List<LightSaveData> lights = new List<LightSaveData>();
 }
 

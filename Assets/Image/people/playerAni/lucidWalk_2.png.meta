@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lucidWalk_2_0: -8064597394195126960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,7 +7,12 @@ public class pushed : MonoBehaviour
     private bool isMoving = false;
     public LayerMask obstacleLayer;
 
+    public checkFishCorrectManager checkFishCorrectManager;
 
+    void Start()
+    {
+        transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
+    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -29,11 +34,11 @@ public class pushed : MonoBehaviour
 
             if(pushDirection.x == 1 && playerPosition.y == transform.position.y)  //向右推
                 canPush = true;
-            if(pushDirection.x == -1 && playerPosition.y == transform.position.y)  //向左推
+            else if(pushDirection.x == -1 && playerPosition.y == transform.position.y)  //向左推
                 canPush = true;
-            if(pushDirection.y == 1 && playerPosition.y == transform.position.y - 1.0f)  //向上推
+            else if(pushDirection.y == 1 && playerPosition.y == transform.position.y - 1.0f)  //向上推
                 canPush = true;
-             if(pushDirection.y == -1 && playerPosition.y == transform.position.y + 1.0f)  //向下推
+            else if(pushDirection.y == -1 && playerPosition.y == transform.position.y + 1.0f)  //向下推
                 canPush = true;
 
             if (canPush)
@@ -44,6 +49,14 @@ public class pushed : MonoBehaviour
                     StartCoroutine(Move(targetPosition));
                 }
             }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && !isMoving)
+        {
+            checkFishCorrectManager.CheckAllFishes();
         }
     }
 
