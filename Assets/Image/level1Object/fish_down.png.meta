@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f413f9bf84ddc4f3e9690475b840b406
+guid: 2b6dde687a9794b5ab498ea1c8e9a06b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3612803013901556630
-    second: FishMarketMap_0
+      213: 52861607777206243
+    second: fish_down_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FishMarketMap_0
+      name: fish_down_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2100
-        height: 1700
+        x: 6
+        y: 7
+        width: 78
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a64efe0eccebcddc0800000000000000
-      internalID: -3612803013901556630
+      spriteID: 3eff0d92a5dcbb000800000000000000
+      internalID: 52861607777206243
       vertices: []
       indices: 
       edges: []
@@ -123,14 +123,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fish_down_0: 52861607777206243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f413f9bf84ddc4f3e9690475b840b406
+guid: 2edffa438e2f04fe29f74a3aeb5f1062
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3612803013901556630
-    second: FishMarketMap_0
+      213: -4272431547808444931
+    second: FishMarketMap (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FishMarketMap_0
+      name: FishMarketMap (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a64efe0eccebcddc0800000000000000
-      internalID: -3612803013901556630
+      spriteID: dfd84b1c42645b4c0800000000000000
+      internalID: -4272431547808444931
       vertices: []
       indices: 
       edges: []

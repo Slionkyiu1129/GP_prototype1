@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f413f9bf84ddc4f3e9690475b840b406
+guid: 03aa2396dae4448179bb52d29ace8f78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3612803013901556630
-    second: FishMarketMap_0
+      213: -1314336443365683043
+    second: downmarket_down_0
+  - first:
+      213: -691939370717977087
+    second: downmarket_down_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FishMarketMap_0
+      name: downmarket_down_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 10
         y: 0
-        width: 2100
-        height: 1700
+        width: 19
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +117,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a64efe0eccebcddc0800000000000000
-      internalID: -3612803013901556630
+      spriteID: d9096d9e7f982cde0800000000000000
+      internalID: -1314336443365683043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: downmarket_down_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 306
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1066f32feccb566f0800000000000000
+      internalID: -691939370717977087
       vertices: []
       indices: 
       edges: []
@@ -123,14 +147,16 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      downmarket_down_0: -1314336443365683043
+      downmarket_down_1: -691939370717977087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
