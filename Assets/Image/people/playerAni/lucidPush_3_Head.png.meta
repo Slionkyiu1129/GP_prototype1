@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lucidPush_3_Head_0: 5811701652264522698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
