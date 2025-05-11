@@ -1,14 +1,14 @@
 INCLUDE globals.ink
 
 
-#speaker:fishman #portrait:fishman 
+#speaker:lucid #portrait:lucid
 -> start
 
 === start ===
-你好 #speaker:fishman #portrait:fishman
-+{have_talk_fishman == ""}[給尋人啟示]-> flyer 
-+{have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
-+[不對話了]->ENDDiolog
+你好 #speaker:lucid #portrait:lucid
++{haveGetFlyer == "true" && have_talk_fishman == ""}[給尋人啟示]-> flyer 
++{haveGetFlyer == "true" && have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
++[沒事～]->ENDDiolog
 
 === flyer ===
 ~ have_talk_fishman = "true"
@@ -19,7 +19,7 @@ INCLUDE globals.ink
 ->END
 
 === ENDDiolog ===
-再見
+再見 #speaker:fishman #portrait:fishman 
 ->END
 
 === alreadyTalkFirst ===
