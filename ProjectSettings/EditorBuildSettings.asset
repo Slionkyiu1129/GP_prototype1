@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1/FishMarket-TestLayer.unity
     guid: 562200bce38c04680b37a32e1d37a512
   - enabled: 1
+    path: Assets/Scenes/Level1/FishMarket.unity
+    guid: cb5783b648ac44b8bbf0a900704a03ae
+  - enabled: 1
     path: Assets/Scenes/Level1/FriendHouse.unity
     guid: f1295e10c780b46249df2d34a66cb09e
   - enabled: 1
@@ -32,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2Scenes/GalleryScene.unity
     guid: 058fe611c76dc614eb66f0ab94df095a
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/DialogProps.unity
+    guid: 2f9b0e4b4ecef4d6f9e8e9b4fead136c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6522c846c08444d148b240e51dd48834, type: 2}
   m_UseUCBPForAssetBundles: 0
