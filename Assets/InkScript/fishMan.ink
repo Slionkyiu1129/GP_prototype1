@@ -34,6 +34,7 @@ INCLUDE globals.ink
 
 === passPuzzle ===
 ~ have_talk_fishman_ApassPuzzle = "true"
+~ flyerNum = flyerNum-1
 謝謝你幫我整理漁貨 #speaker:fishman #portrait:fishman
 你剛剛說什麼再說一次？
 我有一張尋人啟事要給你～ #speaker:lucid #portrait:lucid
