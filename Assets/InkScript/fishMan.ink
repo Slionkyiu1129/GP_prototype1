@@ -7,7 +7,11 @@ INCLUDE globals.ink
 === start ===
 你好 #speaker:lucid #portrait:lucid
 +{haveGetFlyer == "true" && have_talk_fishman == ""}[給尋人啟示]-> flyer 
-+{haveGetFlyer == "true" && have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
++{fishPuzzleFinished == "" && haveGetFlyer == "true" && have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
++{haveGetFlyer == "true" &&fishPuzzleFinished == "yes" && have_talk_fishman_ApassPuzzle == ""}[給尋人啟示] -> passPuzzle
++{haveGetFlyer == "true" && fishPuzzleFinished == "yes" && have_talk_fishman_ApassPuzzle == "true"}[給尋人啟示] -> passPuzzleTalkAready
+//+{fishPuzzleFinished == "yes"}[有通關了] -> ENDDiolog
+//+{fishPuzzleFinished == ""}[還是初始值] -> ENDDiolog
 +[沒事～]->ENDDiolog
 
 === flyer ===
@@ -25,4 +29,17 @@ INCLUDE globals.ink
 === alreadyTalkFirst ===
 要給就先幫我整理漁貨 #speaker:fishman #portrait:fishman
 我空不出手來
+->END
+
+
+=== passPuzzle ===
+~ have_talk_fishman_ApassPuzzle = "true"
+謝謝你幫我整理漁貨 #speaker:fishman #portrait:fishman
+你剛剛說什麼再說一次？
+我有一張尋人啟事要給你～ #speaker:lucid #portrait:lucid
+好！那我再幫你注意上面的人！ #speaker:fishman #portrait:fishman
+-> END
+
+=== passPuzzleTalkAready ===
+你已經給我過了！我會再幫你注意上面的人！ #speaker:fishman #portrait:fishman
 ->END
