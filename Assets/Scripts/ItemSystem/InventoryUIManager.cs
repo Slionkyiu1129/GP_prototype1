@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // ¨Ï¥Î TextMeshPro
+using TMPro; // ï¿½Ï¥ï¿½ TextMeshPro
 
 public class InventoryUIManager : MonoBehaviour
 {
-    public GameObject itemSlotPrefab; // ¥Î©óÅã¥Üªº prefab
-    public Transform itemSlotParent;  // UI Panel ªº Content °Ï°ì
+    public GameObject itemSlotPrefab; // ï¿½Î©ï¿½ï¿½ï¿½Üªï¿½ prefab
+    public Transform itemSlotParent;  // UI Panel ï¿½ï¿½ Content ï¿½Ï°ï¿½
     public Image itemImageUI;
     public TMP_Text itemInfoText;
     private int currentIndex = 0; // For choosing the things in inventory
@@ -17,7 +17,7 @@ public class InventoryUIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        // ­q¾\ inventory §ó·s¨Æ¥ó
+        // ï¿½qï¿½\ inventory ï¿½ï¿½sï¿½Æ¥ï¿½
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.onInventoryCallBack += UpdateUI;
@@ -71,14 +71,14 @@ public class InventoryUIManager : MonoBehaviour
             Debug.Log("Item in inventory: " + item.ItemName + " x" + item.amount);
         }
 
-        // ¥ý²M±¼ÂÂªº slot
+        // ï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½Âªï¿½ slot
         foreach (var slot in currentSlots)
         {
             Destroy(slot);
         }
         currentSlots.Clear();
 
-        // Åã¥Ü¨C­Óª««~
+        // ï¿½ï¿½Ü¨Cï¿½Óªï¿½ï¿½~
         for (int i = 0; i < InventoryManager.Instance.ItemList.Count; i++)
         {
             var item = InventoryManager.Instance.ItemList[i];
@@ -100,13 +100,14 @@ public class InventoryUIManager : MonoBehaviour
     void HighlightSlot(int index)
     {
         for (int i = 0; i < currentSlots.Count; i++)
-        {
-            Image slotImage = currentSlots[i].GetComponent<Image>();
-            if (slotImage != null)
-            {
-                slotImage.color = (i == index) ? highlightColor : normalColor;
-            }
-        }
+    {
+        TMP_Text nameText = currentSlots[i].transform.Find("ItemNameText").GetComponent<TMP_Text>();
+        TMP_Text amountText = currentSlots[i].transform.Find("ItemAmountText").GetComponent<TMP_Text>();
+
+        Color targetColor = (i == index) ? highlightColor : normalColor;
+        nameText.color = targetColor;
+        amountText.color = targetColor;
+    }
     }
 
     void ShowItemInfo(int index)

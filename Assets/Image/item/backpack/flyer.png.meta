@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 39f0fb9180b6143caaba2e7fc18f5287
+guid: e71e5120326e3a34d8acd08a9b1bad1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5868152126338816535
-    second: dialogCue_0
+      213: -8363857253393066095
+    second: flyer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogCue_0
+      name: flyer_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 3
-        width: 64
-        height: 59
+        x: 54
+        y: 50
+        width: 91
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e52f9d5bb2209ea0800000000000000
-      internalID: -5868152126338816535
+      spriteID: 1979e63442c9deb80800000000000000
+      internalID: -8363857253393066095
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialogCue_0: -5868152126338816535
+      flyer_0: -8363857253393066095
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
