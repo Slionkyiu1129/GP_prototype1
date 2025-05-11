@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Ink.Runtime;  
 
 public class checkFishCorrectManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class checkFishCorrectManager : MonoBehaviour
 
     public void CheckAllFishes()  
     {
+        var dialogueManager = DialogueManager.GetInstance();
         foreach (checkFishCorrect fish in fishes)  // 改為遍歷 fish
         {
             if (!fish.IsCorrectlyPlaced())
@@ -29,6 +31,7 @@ public class checkFishCorrectManager : MonoBehaviour
         }
         successImage.SetActive(true);
         saveManager.Instance.currentSave.fishPuzzleFinished = true;  // 改為 fishPuzzleFinished
+        dialogueManager.SetVariableState("fishPuzzleFinished", new Ink.Runtime.StringValue("yes"));
         saveManager.Instance.SaveGame();
     }
 }
