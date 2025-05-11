@@ -15,5 +15,5 @@ MonoBehaviour:
   ItemID: 0
   ItemName: flyer
   amount: 0
-  ItemImage: {fileID: 5440390084351408723, guid: d095399cc217e39448303bf84539d16f, type: 3}
+  ItemImage: {fileID: -8363857253393066095, guid: e71e5120326e3a34d8acd08a9b1bad1c, type: 3}
   description: This is Flyer.

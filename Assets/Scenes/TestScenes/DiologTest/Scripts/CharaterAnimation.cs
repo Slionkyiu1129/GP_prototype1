@@ -31,17 +31,24 @@ public class CharaterAnimation : MonoBehaviour
         {
             animator.SetFloat("Speed", 0f);
         }
+
+        animator.SetBool("isPushing", characterController.IsPushing);
     }
 
+    void LateUpdate()
+    {
+        if (characterController.IsPushing)
+        {
+            Debug.Log("正在推！");
+        }
+    }
     // private void FixedUpdate()
     // {
     //     HandleHorizontalMovement();
     // }
 
     // private void HandleHorizontalMovement()
-    // { 
+    // {
 
     // }
-
-
 }

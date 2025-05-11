@@ -38,13 +38,13 @@ public class InventoryUIManager : MonoBehaviour
         // Only when UI is opening
         if (gameObject.activeSelf && currentSlots.Count > 0)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 currentIndex = Mathf.Max(currentIndex - 1, 0);
                 HighlightSlot(currentIndex);
                 ShowItemInfo(currentIndex);
             }
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 currentIndex = Mathf.Min(currentIndex + 1, currentSlots.Count - 1);
                 HighlightSlot(currentIndex);
