@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator nameAnimator;
     [SerializeField] private Animator portraitAnimator;
 
     [Header("Choices UI")]
@@ -147,7 +147,7 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     //Debug.Log("speaker="+tagValue);
-                    displayNameText.text = tagValue;
+                    nameAnimator.Play(tagValue);
                     break;
                 case PORTRAIT_TAG:
                     //Debug.Log("portrait="+tagValue);
