@@ -12,7 +12,6 @@ public class CharacterController2D_addGrid : MonoBehaviour
 
     public LayerMask obstacleLayer;
     public float obstacleDetectionRays;
-    public bool IsPushing { get; private set; }
 
     void Start()
     {
@@ -70,42 +69,18 @@ public class CharacterController2D_addGrid : MonoBehaviour
                 {
                     transform.localScale = new Vector3(-1, 1, 1); // 朝左（鏡像）
                 }
-                RaycastHit2D hit = Physics2D.Raycast(
-                    (Vector2)transform.position + new Vector2(0, -0.25f),
-                    moveDirection,
-                    obstacleDetectionRays
-                );
-
-                if (hit.collider == null)
-                {
-                    // 沒碰到東西，正常移動
-                    IsPushing = false;
-                    StartCoroutine(Move(targetPosition));
-                }
-                else
-                {
-                    if (hit.collider.CompareTag("Pushable"))
-                    {
-                        // 碰到可以推的東西，播放推動畫
-                        IsPushing = true;
-                    }
-                    else
-                    {
-                        IsPushing = false;
-                    }
-                }
                 // if (!Physics2D.Raycast(transform.position, moveDirection, obstacleDetectionRays, obstacleLayer))
                 // {
                 //     StartCoroutine(Move(targetPosition));
                 // }
-                //if (
-                //   !Physics2D.Raycast(
-                //        (Vector2)transform.position + new Vector2(0, -0.25f),
-                //        moveDirection,
-                //        obstacleDetectionRays,
-                //        obstacleLayer
-                //    )
-                //)
+                if (
+                    !Physics2D.Raycast(
+                        (Vector2)transform.position + new Vector2(0, -0.25f),
+                        moveDirection,
+                        obstacleDetectionRays,
+                        obstacleLayer
+                    )
+                )
                 {
                     StartCoroutine(Move(targetPosition));
                 }
