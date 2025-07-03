@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 109469d753c2b4150bef018391d931e8
+guid: 503bb1780711644c4b886e9b9bf1f34a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8572058816477049497
-    second: dialogPropsMap 1_0
+      213: 621481411233548048
+    second: lucidFront_Head_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,22 +126,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogPropsMap 1_0
+      name: lucidFront_Head_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 30
         y: 0
-        width: 1200
-        height: 1000
+        width: 36
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 992bedda31216f670800000000000000
-      internalID: 8572058816477049497
+      spriteID: 017851ffc02ff9800800000000000000
+      internalID: 621481411233548048
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0f514ef043f2a4f40b950b0704a4c19c
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialogPropsMap 1_0: 8572058816477049497
+      lucidFront_Head_0: 621481411233548048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
