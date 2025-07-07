@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 109469d753c2b4150bef018391d931e8
+guid: bd068de591e864b439ad4255819dfb3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8572058816477049497
-    second: dialogPropsMap 1_0
+      213: 6064479913004847910
+    second: WaveMask_0
+  - first:
+      213: 5538816048911365381
+    second: WaveMask_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,22 +129,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogPropsMap 1_0
+      name: WaveMask_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1200
-        height: 1000
+        x: 3
+        y: 10
+        width: 3471
+        height: 3131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 992bedda31216f670800000000000000
-      internalID: 8572058816477049497
+      spriteID: 6235522995c592450800000000000000
+      internalID: 6064479913004847910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaveMask_1
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 93
+        width: 2749
+        height: 2051
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505389fb9d3dddc40800000000000000
+      internalID: 5538816048911365381
       vertices: []
       indices: 
       edges: []
@@ -149,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b80a0bb9ec43747958c0f3ae2e0875b5
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialogPropsMap 1_0: 8572058816477049497
+      WaveMask_0: 6064479913004847910
+      WaveMask_1: 5538816048911365381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

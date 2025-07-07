@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 109469d753c2b4150bef018391d931e8
+guid: bec1c5bf4a00f4e39936957e3b9b2b3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8572058816477049497
-    second: dialogPropsMap 1_0
+      213: 6269745706593582571
+    second: defaultCG_dialog_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,22 +126,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialogPropsMap 1_0
+      name: defaultCG_dialog_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1000
+        width: 500
+        height: 1680
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 48}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 992bedda31216f670800000000000000
-      internalID: 8572058816477049497
+      spriteID: bed7a89608c920750800000000000000
+      internalID: 6269745706593582571
       vertices: []
       indices: 
       edges: []
@@ -149,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialogPropsMap 1_0: 8572058816477049497
+      defaultCG_dialog_0: 6269745706593582571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
