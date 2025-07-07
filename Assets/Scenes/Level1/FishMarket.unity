@@ -2493,10 +2493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b57d30181e8d4628b176a58612dd8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.04
+  typingSpeed: 0.06
   loadGlobalsJSON: {fileID: 4900000, guid: 01aaf22f07df440d5a0793d26dfcec98, type: 3}
   dialoguePanel: {fileID: 1970943209}
-  continueIcon: {fileID: 0}
+  continueIcon: {fileID: 2121566154}
   dialogueText: {fileID: 610165238}
   nameAnimator: {fileID: 2141290540}
   portraitAnimator: {fileID: 2091767157}
@@ -10167,7 +10167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2121566155
 RectTransform:
   m_ObjectHideFlags: 0
