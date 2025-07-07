@@ -5,7 +5,8 @@ INCLUDE globals.ink
 -> start
 
 === start ===
-你好 #speaker:lucid #portrait:lucid
+<color=\#bd6d68>你好</color> #speaker:lucid #portrait:lucid
+測試用文字：如要變更偏好的搜尋主題，請修改搜尋設定。你選擇的主題會儲存在每台已登入 Google 帳戶的電腦上。
 +{haveGetFlyer == "true" && have_talk_fishman == ""}[給尋人啟示]-> flyer 
 +{fishPuzzleFinished == "" && haveGetFlyer == "true" && have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
 +{haveGetFlyer == "true" &&fishPuzzleFinished == "yes" && have_talk_fishman_ApassPuzzle == ""}[給尋人啟示] -> passPuzzle
