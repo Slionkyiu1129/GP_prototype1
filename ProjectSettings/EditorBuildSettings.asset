@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/SecondScene.unity
     guid: acd353e375e074e458f69f55b25d1c84
   - enabled: 1
-    path: Assets/Scenes/Chapter1/FishMarket-TestLayer.unity
+    path: Assets/Scenes/TestScenes/FishMarket-TestLayer.unity
     guid: 562200bce38c04680b37a32e1d37a512
   - enabled: 1
     path: Assets/Scenes/Chapter1/FishMarket.unity

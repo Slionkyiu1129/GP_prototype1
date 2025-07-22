@@ -2822,9 +2822,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typingSpeed: 0.06
-  loadGlobalsJSON: {fileID: 4900000, guid: 28376fc34ee3149eeac884a41abf6385, type: 3}
+  loadGlobalsJSON: {fileID: 4900000, guid: 01aaf22f07df440d5a0793d26dfcec98, type: 3}
   dialoguePanel: {fileID: 790140815}
-  continueIcon: {fileID: 0}
+  continueIcon: {fileID: 2120127669}
   dialogueText: {fileID: 1161442547}
   nameAnimator: {fileID: 0}
   portraitAnimator: {fileID: 1456681019}
