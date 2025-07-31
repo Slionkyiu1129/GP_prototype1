@@ -13,7 +13,6 @@ INCLUDE globals.ink
 #speaker:lucid #portrait:lucid
 只是路過看看而已。
 #speaker:default #portrait:default
-//#speaker:fishman #portrait:fishman
 我和花兒們隨時都歡迎你再來光臨。
 ->END
 
