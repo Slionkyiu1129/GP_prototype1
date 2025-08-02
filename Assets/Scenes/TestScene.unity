@@ -5151,7 +5151,7 @@ PrefabInstance:
     - target: {fileID: 6568480445172514268, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: ab99d4c6bca1c422cb119ca28d6dadcb, type: 3}
+      objectReference: {fileID: 4900000, guid: 910d9aecb0807ba48b87e5353e6e9560, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

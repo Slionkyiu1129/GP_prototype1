@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fishMarket_0: 8172346095627064842
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
