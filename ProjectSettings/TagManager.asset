@@ -7,6 +7,7 @@ TagManager:
   - Sprite
   - Npc
   - Pushable
+  - player
   layers:
   - Default
   - TransparentFX
