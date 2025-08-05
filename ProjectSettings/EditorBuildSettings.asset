@@ -21,13 +21,16 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/FishMarket-TestLayer.unity
     guid: 562200bce38c04680b37a32e1d37a512
   - enabled: 1
-    path: Assets/Scenes/Chapter1/centralSquare.unity
+    path: Assets/Scenes/Chapter1/CentralSquare.unity
     guid: 26516557a911347dfa0235973443ef13
   - enabled: 1
     path: Assets/Scenes/Chapter1/FishMarket.unity
     guid: cb5783b648ac44b8bbf0a900704a03ae
   - enabled: 1
-    path: Assets/Scenes/Chapter1/residentialArea.unity
+    path: Assets/Scenes/Chapter1/BackMountain.unity
+    guid: 0df8516fc2d8b4feca96534e9b0ae452
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/ResidentialArea.unity
     guid: 43dd727b6149045a4b759c8cb34750fe
   - enabled: 1
     path: Assets/Scenes/Chapter1/FriendHouse.unity
@@ -36,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter1/Hospital.unity
     guid: 512ccd713a6f44458b35926fd6184d38
   - enabled: 1
-    path: Assets/Scenes/Chapter1/flourMom.unity
+    path: Assets/Scenes/Chapter1/FlourMom.unity
     guid: 2f9b0e4b4ecef4d6f9e8e9b4fead136c
   - enabled: 1
     path: Assets/Scenes/Chapter2/FlowerShopScene.unity

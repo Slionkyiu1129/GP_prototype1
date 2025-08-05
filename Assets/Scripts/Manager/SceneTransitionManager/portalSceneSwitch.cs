@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class portalSceneSwitch : MonoBehaviour
 {
-    public string targetScene;
+    public string targetScenePath;   //e.g. "A/home" (資料夾/場景名稱)
     public int targetSpawnIndex;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -13,9 +13,9 @@ public class portalSceneSwitch : MonoBehaviour
         if (other.CompareTag("player"))
         {
             saveManager.Instance.currentSave.playerPosition = targetSpawnIndex;
-            saveManager.Instance.currentSave.nextScene = targetScene;
+            saveManager.Instance.currentSave.nextScene = "Scenes/"+targetScenePath;
             saveManager.Instance.SaveGame();
-            SceneTransitionManager.Instance.SwitchScene(targetScene);
+            SceneTransitionManager.Instance.SwitchScene("Scenes/"+targetScenePath);
         }
     }
 }

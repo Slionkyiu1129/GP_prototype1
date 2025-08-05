@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionManager : MonoBehaviour
 {
     public static SceneTransitionManager Instance;
-    
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -27,8 +27,8 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    public void SwitchScene(string sceneName)
+    public void SwitchScene(string targetScenePath)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(targetScenePath);
     }
 }
