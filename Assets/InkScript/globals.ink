@@ -8,3 +8,9 @@ VAR flyerNum = -1
 
 VAR flowerShopOwnerGetFlyer=""
 VAR TroubleFriendGetFlyer=""
+VAR ChickencakeOwnerGetFlyer=""
+VAR ChickencakeOwnerFriendGetFlyer=""
+VAR FlowerSonGetFlyer=""
+VAR SacredOfficialGetFlyer=""
+VAR CatGetFlyer=""
+VAR TrampGetFlyer=""
