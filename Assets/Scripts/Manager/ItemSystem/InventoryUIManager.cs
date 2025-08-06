@@ -1,18 +1,20 @@
 using System.Collections.Generic;
+using TMPro; // �ϥ� TextMeshPro
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // �ϥ� TextMeshPro
 
 public class InventoryUIManager : MonoBehaviour
 {
     public GameObject itemSlotPrefab; // �Ω���ܪ� prefab
-    public Transform itemSlotParent;  // UI Panel �� Content �ϰ�
+    public Transform itemSlotParent; // UI Panel �� Content �ϰ�
     public Image itemImageUI;
     public TMP_Text itemInfoText;
     private int currentIndex = 0; // For choosing the things in inventory
     public Color normalColor = Color.white;
     public Color highlightColor = Color.yellow;
-
+    public GameObject photoAlbumUI;
+    public GameObject inventoryPanel;
+    public GameObject inventoryUI;
     private List<GameObject> currentSlots = new List<GameObject>();
 
     private void OnEnable()
@@ -50,6 +52,23 @@ public class InventoryUIManager : MonoBehaviour
                 HighlightSlot(currentIndex);
                 ShowItemInfo(currentIndex);
             }
+            else if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Item selectedItem = InventoryManager.Instance.ItemList[currentIndex];
+                if (selectedItem.ItemName == "PhotoAlbum")
+                {
+                    OpenPhotoAlbum();
+                }
+                else
+                {
+                    Debug.Log("這個物品沒有使用行為");
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            ClosePhotoAlbum();
+            Debug.Log("X");
         }
     }
 
@@ -100,14 +119,18 @@ public class InventoryUIManager : MonoBehaviour
     void HighlightSlot(int index)
     {
         for (int i = 0; i < currentSlots.Count; i++)
-    {
-        TMP_Text nameText = currentSlots[i].transform.Find("ItemNameText").GetComponent<TMP_Text>();
-        TMP_Text amountText = currentSlots[i].transform.Find("ItemAmountText").GetComponent<TMP_Text>();
+        {
+            TMP_Text nameText = currentSlots[i]
+                .transform.Find("ItemNameText")
+                .GetComponent<TMP_Text>();
+            TMP_Text amountText = currentSlots[i]
+                .transform.Find("ItemAmountText")
+                .GetComponent<TMP_Text>();
 
-        Color targetColor = (i == index) ? highlightColor : normalColor;
-        nameText.color = targetColor;
-        amountText.color = targetColor;
-    }
+            Color targetColor = (i == index) ? highlightColor : normalColor;
+            nameText.color = targetColor;
+            amountText.color = targetColor;
+        }
     }
 
     void ShowItemInfo(int index)
@@ -122,6 +145,30 @@ public class InventoryUIManager : MonoBehaviour
         {
             itemImageUI.sprite = null;
             itemInfoText.text = "";
+        }
+    }
+
+    void OpenPhotoAlbum()
+    {
+        if (photoAlbumUI != null)
+        {
+            photoAlbumUI.SetActive(true);
+            gameObject.SetActive(false); // 關閉背包（也可以用 inventoryPanel.SetActive(false)）
+            Debug.Log("📖 開啟相簿介面");
+        }
+        else
+        {
+            Debug.LogWarning("photoAlbumUI 未設定！");
+        }
+    }
+
+    public void ClosePhotoAlbum()
+    {
+        gameObject.SetActive(false); // 關閉相簿
+        if (inventoryUI != null)
+        {
+            inventoryUI.SetActive(true); // 回到背包
+            Debug.Log("📕 返回背包介面");
         }
     }
 }

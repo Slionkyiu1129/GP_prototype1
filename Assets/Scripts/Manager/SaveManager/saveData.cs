@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class saveData
 {
+    public int playerPosition = 0; 
+    public string nextScene = "StartUI"; 
     public bool potPuzzleFinished = false;
     public bool fishPuzzleFinished = false;
     public List<LightSaveData> lights = new List<LightSaveData>();
