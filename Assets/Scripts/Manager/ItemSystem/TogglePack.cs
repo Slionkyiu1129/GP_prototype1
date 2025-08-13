@@ -7,6 +7,7 @@ public class TogglePack : MonoBehaviour
     public GameObject inventoryUI;
     public player player;
     public static bool isInventoryOpen = false;
+    public PhotoAlbumManager photoAlbumManager;
 
     void Start()
     {
@@ -19,7 +20,11 @@ public class TogglePack : MonoBehaviour
     void Update()
     {
         // Open the pack
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (!photoAlbumManager.IsAlbumActive && Input.GetKeyDown(KeyCode.Q))
+        {
+            ToggleInventory();
+        }
+        if (isInventoryOpen && Input.GetKeyDown(KeyCode.X))
         {
             ToggleInventory();
         }

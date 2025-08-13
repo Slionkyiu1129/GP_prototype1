@@ -14,7 +14,6 @@ public class InventoryUIManager : MonoBehaviour
     public Color highlightColor = Color.yellow;
     public GameObject photoAlbumUI;
     public GameObject inventoryPanel;
-    public GameObject inventoryUI;
     private List<GameObject> currentSlots = new List<GameObject>();
 
     private void OnEnable()
@@ -65,10 +64,10 @@ public class InventoryUIManager : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (gameObject.activeSelf && Input.GetKeyDown(KeyCode.X))
         {
             ClosePhotoAlbum();
-            Debug.Log("X");
+            Debug.Log("ClosePhotoAlbum");
         }
     }
 
@@ -165,9 +164,9 @@ public class InventoryUIManager : MonoBehaviour
     public void ClosePhotoAlbum()
     {
         gameObject.SetActive(false); // 關閉相簿
-        if (inventoryUI != null)
+        if (inventoryPanel != null)
         {
-            inventoryUI.SetActive(true); // 回到背包
+            inventoryPanel.SetActive(true); // 回到背包
             Debug.Log("📕 返回背包介面");
         }
     }
