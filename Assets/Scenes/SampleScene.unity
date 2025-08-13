@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 172858514}
   - component: {fileID: 172858513}
   m_Layer: 0
-  m_Name: testOpenEyes
+  m_Name: sceneTransitionAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1858,7 +1858,6 @@ MonoBehaviour:
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   photoAlbumUI: {fileID: 0}
   inventoryPanel: {fileID: 0}
-  inventoryUI: {fileID: 0}
 --- !u!114 &643538585
 MonoBehaviour:
   m_ObjectHideFlags: 0
