@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 // uning Ink.UnityIntegration;
 
 public class DialogueManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Animator nameAnimator;
     [SerializeField] private Animator portraitAnimator;
+    [SerializeField] private Animator OpenCloseAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -111,10 +113,13 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
+        //OpenCloseAnimator.GetComponent<PlayableDirector>().Play();
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
 
+        OpenCloseAnimator.GetComponent<PlayableDirector>().Play();
+        yield return new WaitForSeconds(0.25f);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
