@@ -2843,6 +2843,7 @@ MonoBehaviour:
   dialogueText: {fileID: 610165238}
   nameAnimator: {fileID: 2141290540}
   portraitAnimator: {fileID: 2091767157}
+  OpenCloseAnimator: {fileID: 0}
   choices:
   - {fileID: 596142661}
   - {fileID: 2096760773}
@@ -3629,9 +3630,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634417612}
+  - component: {fileID: 634417618}
   - component: {fileID: 634417616}
   - component: {fileID: 634417615}
-  - component: {fileID: 634417614}
   - component: {fileID: 634417613}
   - component: {fileID: 634417617}
   m_Layer: 5
@@ -3648,7 +3649,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634417611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.053, y: 1.8823428, z: 1.053}
   m_ConstrainProportionsScale: 0
@@ -3692,66 +3693,6 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 15}
   m_Constraint: 2
   m_ConstraintCount: 2
---- !u!114 &634417614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634417611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bb678ec0f0490448c4e5ae5d069585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photoButtons:
-  - {fileID: 1404884746}
-  - {fileID: 167487621}
-  - {fileID: 1826315409}
-  - {fileID: 318714655}
-  - {fileID: 1542599499}
-  - {fileID: 1649836248}
-  - {fileID: 2028204281}
-  - {fileID: 239281652}
-  photoPreviewPanel: {fileID: 2007978534}
-  previewImage: {fileID: 1134397991}
-  previewDescription: {fileID: 1598469643}
-  inventoryUI: {fileID: 643538583}
-  allPhotos:
-  - id: 0
-    photo: {fileID: -8522433546947300881, guid: 8da6b6f82b88d454e9e5402e27580980, type: 3}
-    description: 0
-    unlocked: 1
-  - id: 1
-    photo: {fileID: 3206288760120457463, guid: 758e64934295bab4da436415699f1bc2, type: 3}
-    description: 1
-    unlocked: 1
-  - id: 2
-    photo: {fileID: -1292061513375386741, guid: c0a38c80bd6624e42b471104fc7e54a7, type: 3}
-    description: 2
-    unlocked: 0
-  - id: 3
-    photo: {fileID: 4810580447802828262, guid: 5387046578ddeb14d95dbf8deb3e351b, type: 3}
-    description: 3
-    unlocked: 1
-  - id: 4
-    photo: {fileID: -8522433546947300881, guid: 8da6b6f82b88d454e9e5402e27580980, type: 3}
-    description: 4
-    unlocked: 1
-  - id: 5
-    photo: {fileID: 3206288760120457463, guid: 758e64934295bab4da436415699f1bc2, type: 3}
-    description: 5
-    unlocked: 1
-  - id: 6
-    photo: {fileID: -1292061513375386741, guid: c0a38c80bd6624e42b471104fc7e54a7, type: 3}
-    description: 6
-    unlocked: 1
-  - id: 7
-    photo: {fileID: 4810580447802828262, guid: 5387046578ddeb14d95dbf8deb3e351b, type: 3}
-    description: 7
-    unlocked: 1
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0.65, g: 0.8, b: 1, a: 1}
 --- !u!114 &634417615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3765,7 +3706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.55375576, g: 0.6127932, b: 0.6415094, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3804,6 +3745,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &634417618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634417611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bb678ec0f0490448c4e5ae5d069585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photoButtons:
+  - {fileID: 1404884746}
+  - {fileID: 167487621}
+  - {fileID: 1826315409}
+  - {fileID: 318714655}
+  - {fileID: 1542599499}
+  - {fileID: 1649836248}
+  - {fileID: 2028204281}
+  - {fileID: 239281652}
+  photoPreviewPanel: {fileID: 2007978534}
+  previewImage: {fileID: 1134397991}
+  previewDescription: {fileID: 1598469643}
+  inventoryUI: {fileID: 643538583}
+  player: {fileID: 0}
 --- !u!1 &643538583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,10 +3780,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 643538588}
+  - component: {fileID: 643538584}
   - component: {fileID: 643538587}
   - component: {fileID: 643538586}
   - component: {fileID: 643538585}
-  - component: {fileID: 643538584}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -3844,6 +3811,7 @@ MonoBehaviour:
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   photoAlbumUI: {fileID: 634417611}
   inventoryPanel: {fileID: 643538583}
+  player: {fileID: 0}
 --- !u!114 &643538585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11084,7 +11052,7 @@ PrefabInstance:
     - target: {fileID: 7205050047147747270, guid: 1793eb0b8a95e414e8675d8ee26d7adc, type: 3}
       propertyPath: photoAlbumManager
       value: 
-      objectReference: {fileID: 634417614}
+      objectReference: {fileID: 634417618}
     - target: {fileID: 9130769487467594819, guid: 1793eb0b8a95e414e8675d8ee26d7adc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.25

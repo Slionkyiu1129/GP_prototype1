@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using TMPro; // �ϥ� TextMeshPro
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryUIManager : MonoBehaviour
 {
-    public GameObject itemSlotPrefab; // �Ω���ܪ� prefab
-    public Transform itemSlotParent; // UI Panel �� Content �ϰ�
+    public GameObject itemSlotPrefab;
+    public Transform itemSlotParent;
     public Image itemImageUI;
     public TMP_Text itemInfoText;
     private int currentIndex = 0; // For choosing the things in inventory
@@ -14,11 +14,11 @@ public class InventoryUIManager : MonoBehaviour
     public Color highlightColor = Color.yellow;
     public GameObject photoAlbumUI;
     public GameObject inventoryPanel;
+    public player player;
     private List<GameObject> currentSlots = new List<GameObject>();
 
     private void OnEnable()
     {
-        // �q�\ inventory ��s�ƥ�
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.onInventoryCallBack += UpdateUI;
@@ -89,14 +89,12 @@ public class InventoryUIManager : MonoBehaviour
             Debug.Log("Item in inventory: " + item.ItemName + " x" + item.amount);
         }
 
-        // ���M���ª� slot
         foreach (var slot in currentSlots)
         {
             Destroy(slot);
         }
         currentSlots.Clear();
 
-        // ��ܨC�Ӫ��~
         for (int i = 0; i < InventoryManager.Instance.ItemList.Count; i++)
         {
             var item = InventoryManager.Instance.ItemList[i];
@@ -151,9 +149,14 @@ public class InventoryUIManager : MonoBehaviour
     {
         if (photoAlbumUI != null)
         {
+            bool isActive = photoAlbumUI.activeSelf;
             photoAlbumUI.SetActive(true);
             gameObject.SetActive(false); // 關閉背包（也可以用 inventoryPanel.SetActive(false)）
-            Debug.Log("📖 開啟相簿介面");
+            Debug.Log("---開啟相簿---");
+            if (player != null)
+            {
+                player.enabled = isActive;
+            }
         }
         else
         {
@@ -167,7 +170,7 @@ public class InventoryUIManager : MonoBehaviour
         if (inventoryPanel != null)
         {
             inventoryPanel.SetActive(true); // 回到背包
-            Debug.Log("📕 返回背包介面");
+            Debug.Log("---返回背包---");
         }
     }
 }

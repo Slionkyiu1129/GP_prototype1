@@ -24,8 +24,8 @@ public class TogglePack : MonoBehaviour
         {
             ToggleInventory();
         }
-        if (isInventoryOpen && Input.GetKeyDown(KeyCode.X))
-        {
+        if (!photoAlbumManager.IsAlbumActive && isInventoryOpen && Input.GetKeyDown(KeyCode.X))
+        {   
             ToggleInventory();
         }
     }
