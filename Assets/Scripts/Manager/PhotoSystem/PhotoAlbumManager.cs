@@ -97,24 +97,6 @@ public class PhotoAlbumManager : MonoBehaviour
 
         bool hasAny = _visibleButtons.Count > 0;
 
-        /* if (hasAny && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
-        {
-            _currentIndex = Mathf.Max(_currentIndex - 1, 0);
-            UpdateHighlight();
-        }
-        else if (hasAny && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)))
-        {
-            _currentIndex = Mathf.Min(_currentIndex + 1, _visibleButtons.Count - 1);
-            UpdateHighlight();
-        }
-        else if (
-            hasAny && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-        )
-        {
-            var data = GetPhotoDataByVisibleIndex(_currentIndex);
-            if (data != null)
-                OpenPhoto(data);
-        } */
         // --- 控制方向 ---
         if (hasAny && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
@@ -200,7 +182,6 @@ public class PhotoAlbumManager : MonoBehaviour
             used++;
         }
 
-        /* _currentIndex = _visibleButtons.Count > 0 ? 0 : -1; */
         if (_currentIndex == -1 && _visibleButtons.Count > 0)
             _currentIndex = 0;
 
