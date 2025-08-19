@@ -45,6 +45,13 @@ public class DialogueManager : MonoBehaviour
     private int lastFlyerNum = -1;
     private int flyerNum = 0;
 
+    private bool autoDialogueMode = false;
+
+    public void SetAutoDialogueMode(bool isAuto)
+    {
+        autoDialogueMode = isAuto;
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -93,8 +100,15 @@ public class DialogueManager : MonoBehaviour
         // {
         //     ContinueStory();
         // }
-        if (canContinueToNextLine 
-            && currentStory.currentChoices.Count == 0 
+        
+        // if (autoDialogueMode && canContinueToNextLine && currentStory.currentChoices.Count == 0)
+        // {
+        //     ContinueStory();
+        //     return;
+        // }
+
+        if (canContinueToNextLine
+            && currentStory.currentChoices.Count == 0
             && InputManager.GetInstance().GetSubmitPressed())
         {
             ContinueStory();
@@ -117,6 +131,7 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
+        autoDialogueMode = false; 
 
         OpenCloseAnimator.GetComponent<PlayableDirector>().Play();
         yield return new WaitForSeconds(0.25f);
@@ -125,7 +140,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
     }
 
-    private IEnumerator DisplayLine(string line) 
+    private IEnumerator DisplayLine(string line)
     {
         // empty the dialogue text
         dialogueText.text = "";
@@ -141,14 +156,14 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in line.ToCharArray())
         {
             // if the submit button is pressed, finish up displaying the line right away
-            if (InputManager.GetInstance().GetSubmitPressed()) 
+            if (InputManager.GetInstance().GetSubmitPressed())
             {
                 dialogueText.text = line;
                 break;
             }
 
             // check for rich text tag, if found, add it without waiting
-            if (letter == '<' || isAddingRichTextTag) 
+            if (letter == '<' || isAddingRichTextTag)
             {
                 isAddingRichTextTag = true;
                 dialogueText.text += letter;
@@ -158,7 +173,7 @@ public class DialogueManager : MonoBehaviour
                 }
             }
             // if not rich text, add the next letter and wait a small time
-            else 
+            else
             {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
@@ -170,6 +185,12 @@ public class DialogueManager : MonoBehaviour
         DisplayChoices();
 
         canContinueToNextLine = true;
+
+        if (autoDialogueMode && currentStory.currentChoices.Count == 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            ContinueStory();
+        }
     }
 
     private void HideChoices() 

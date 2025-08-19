@@ -34,7 +34,18 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
+    public void TimelineTrigger()
+    {
+        Debug.Log("Timeline Triggered Dialogue");
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            Debug.Log("Starting Dialogue from Timeline Trigger");
+            DialogueManager.GetInstance().SetAutoDialogueMode(true);
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "player")
         {
