@@ -131,10 +131,12 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
-        autoDialogueMode = false; 
+        
 
         OpenCloseAnimator.GetComponent<PlayableDirector>().Play();
+        
         yield return new WaitForSeconds(0.25f);
+        autoDialogueMode = false; 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
