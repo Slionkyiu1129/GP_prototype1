@@ -63,7 +63,7 @@ public class changePic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             isPlayerNear = true;
         }
@@ -71,7 +71,7 @@ public class changePic : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             isPlayerNear = false;
         }
