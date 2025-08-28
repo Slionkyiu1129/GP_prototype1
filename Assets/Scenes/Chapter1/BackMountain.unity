@@ -5499,7 +5499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
+  targetScenePath: Chapter1/backMountainRoad
   targetSpawnIndex: 3
 --- !u!1 &2071858528
 GameObject:

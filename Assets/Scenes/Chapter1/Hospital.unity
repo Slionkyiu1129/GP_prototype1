@@ -4802,8 +4802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/park
+  targetSpawnIndex: 1
 --- !u!1 &1599142732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5040,8 +5040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/residentialArea
+  targetSpawnIndex: 2
 --- !u!1 &1614452971
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,8 +5223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/fluorHouse
+  targetSpawnIndex: 1
 --- !u!4 &1671039916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9130769487467594819, guid: 1793eb0b8a95e414e8675d8ee26d7adc, type: 3}
@@ -5706,8 +5706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/centralSquare
+  targetSpawnIndex: 2
 --- !u!1 &1944368562
 GameObject:
   m_ObjectHideFlags: 0

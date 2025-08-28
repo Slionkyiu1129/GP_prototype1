@@ -103,13 +103,13 @@ TextureImporter:
       name: backMountainRoad_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 1560
+        width: 1556
         height: 1300
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 168, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -123,14 +123,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e609eaba7ffc74506b087da11f6fe91d
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      backMountainRoad_0: -2964990633584805489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

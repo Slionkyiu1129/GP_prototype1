@@ -1579,8 +1579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/shopStreet
+  targetSpawnIndex: 1
 --- !u!1 &427464600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,8 +4698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/market
+  targetSpawnIndex: 2
 --- !u!1 &1464649535
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,8 +4846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/hospital
+  targetSpawnIndex: 4
 --- !u!1 &1523509673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,8 +5873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/backMountainEntrance
+  targetSpawnIndex: 2
 --- !u!4 &1848949977
 Transform:
   m_ObjectHideFlags: 0

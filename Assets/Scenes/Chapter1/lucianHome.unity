@@ -4328,8 +4328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/residentialArea
+  targetSpawnIndex: 1
 --- !u!1 &1523509673
 GameObject:
   m_ObjectHideFlags: 0
@@ -6518,6 +6518,10 @@ PrefabInstance:
     - target: {fileID: 2525168154523732524, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_Name
       value: npc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525168154523732524, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

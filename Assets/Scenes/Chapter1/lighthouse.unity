@@ -3148,8 +3148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/market
+  targetSpawnIndex: 1
 --- !u!1 &1021438796
 GameObject:
   m_ObjectHideFlags: 0
