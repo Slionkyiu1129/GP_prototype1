@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/OldChapter1Scene/ResidentialArea.unity
     guid: 43dd727b6149045a4b759c8cb34750fe
   - enabled: 1
-    path: Assets/Scenes/Chapter1/friendHouse.unity
+    path: Assets/Scenes/TestScenes/OldChapter1Scene/friendHouse.unity
     guid: f1295e10c780b46249df2d34a66cb09e
   - enabled: 1
     path: Assets/Scenes/TestScenes/OldChapter1Scene/hospital.unity
@@ -41,6 +41,60 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/OldChapter1Scene/FlourMom.unity
     guid: 2f9b0e4b4ecef4d6f9e8e9b4fead136c
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/backMountain.unity
+    guid: ef5568f311ac44457bf89861e1623540
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/backMountainEntrance.unity
+    guid: 5dc67136fdbb24ae8b3664a63e6d928e
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/backMountainRoad.unity
+    guid: 72f76f82be89546e39756ff23f005cc2
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/centralSquare.unity
+    guid: 87cec7ffa819e4f3dadb7534c02af238
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/fishMarket.unity
+    guid: 4b2a76a2a6bae4ece8c8e0e6e581f9ce
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/fluorHouse.unity
+    guid: 334f2fde2ef2345c69c0f078bc06534a
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/gallery.unity
+    guid: d2932159a7d804aef9783434af4e0345
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/hospital.unity
+    guid: 1634c6c3f454a4b8796b430d476cd2a5
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/hospital-first.unity
+    guid: 7a65ab11bd305420eaa2cb0e1913f4b9
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/hospital-second.unity
+    guid: d3503cb0f8a13412d821d07c5e5a4641
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/hospital-third.unity
+    guid: 27902c617725b471195d8c36bdf5f175
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/lighthouse.unity
+    guid: e3842327735944029bf8fcd36641d040
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/lucianHome.unity
+    guid: 6b80bceb72e684286936f51a68fd90a0
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/market.unity
+    guid: 0118dbd74b84f4d6f9c1dbb5c8322aa5
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/park.unity
+    guid: 50c224e86bea54c95a9e1d7d78fdcfa1
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/residentialArea.unity
+    guid: 92503a4df716b41c4a46e98eeab57c05
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/secretBase.unity
+    guid: 6e69bb956adb3450f8ed8b696606b31e
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/shopStreet.unity
+    guid: 33c72a1c9f8c0464ab118366f2175fb5
   - enabled: 1
     path: Assets/Scenes/Chapter2/FlowerShopScene.unity
     guid: 28ef315b87fbf8047ad2baac6b45469a
