@@ -9,6 +9,9 @@ public class saveData
     public string nextScene = "StartUI"; 
     public bool potPuzzleFinished = false;
     public bool fishPuzzleFinished = false;
+
+    public bool hasKey1 = false;
+    public bool hasKey2 = false;
     public List<LightSaveData> lights = new List<LightSaveData>();
 }
 

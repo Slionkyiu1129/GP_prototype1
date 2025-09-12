@@ -34,7 +34,7 @@ public class PhotoAlbumManager : MonoBehaviour
     public GameObject inventoryUI;
 
     [Header("Player")]
-    public player player;
+    public CharacterController2D_addGrid player;
 
     /*[Header("顏色")]
     public Color normalColor = Color.white;

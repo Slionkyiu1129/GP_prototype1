@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d998efd84d5de4b928a3ff5269f3073d
+guid: 2800afb279ef024428c2516a30b1f5b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6584210321137486609
-    second: lucianHome_0
+      213: 1208040086343421634
+    second: image_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lucianHome_0
+      name: image_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1560
-        height: 1300
+        width: 2154
+        height: 1668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11b4cd50760df5b50800000000000000
-      internalID: 6584210321137486609
+      spriteID: 2ce8eecde02d3c010800000000000000
+      internalID: 1208040086343421634
       vertices: []
       indices: 
       edges: []
@@ -157,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lucianHome_0: 6584210321137486609
+      image_0: 1208040086343421634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
