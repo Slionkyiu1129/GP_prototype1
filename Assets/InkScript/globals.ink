@@ -6,6 +6,7 @@ VAR fishmanHaveGetFlyer = ""
 VAR fishPuzzleFinished = ""   // 有通關的變數是 yes
 VAR flyerNum = -1
 
+VAR DoctorGetFlyer=""
 VAR flowerShopOwnerGetFlyer=""
 VAR TroubleFriendGetFlyer=""
 VAR ChickencakeOwnerGetFlyer=""
