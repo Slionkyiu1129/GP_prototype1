@@ -33,13 +33,13 @@ INCLUDE globals.ink
 #speaker:lucid #portrait:lucid
 你有看到他嗎？
 #speaker:default #portrait:default 
-前幾天他確實有來找我，要我賣給他一種很罕見的花。
+前幾天他確實有來找我，問了我很多有關花的事情。
 #speaker:lucid #portrait:lucid
-你還記得是哪種花嗎？
+花？
 #speaker:default #portrait:default 
-那花不常見，只有我爸的花店有賣。不過，芙洛爾叫我保密，我不知道該不該告訴你。
+一種島上不常見的品種，大概只有我家的花店有賣吧……不過，還是趕快照到人要緊吧！我會多注意的，希望能趕快找到人。
 ->END
 
 ===alreadygetflyer===
-事情一定會解決的，如果你心情很差的話就來看看海吧。
+事情一定會解決的，如果你心情很差的話也來試試看海吧，大家總能在海風中找回平靜。
 ->END

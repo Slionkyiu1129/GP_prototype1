@@ -13,7 +13,9 @@ INCLUDE globals.ink
 #speaker:lucid #portrait:lucid
 只是路過看看而已。
 #speaker:default #portrait:default
-我和花兒們隨時都歡迎你再來光臨。
+啊、知道了~我和花兒們隨時都歡迎你再來光臨。
+#speaker:lucid #portrait:lucid
+謝謝老闆。
 ->END
 
 
@@ -42,9 +44,9 @@ INCLUDE globals.ink
 #speaker:lucid #portrait:lucid
 他最近還有來嗎？
 #speaker:default #portrait:default 
-最近沒什麼看見他。
+最近沒什麼看見他耶。
 #speaker:lucid #portrait:lucid
-好的謝謝你的資訊。
+我知道了，謝謝老闆的資訊。
 ->END
 
 
