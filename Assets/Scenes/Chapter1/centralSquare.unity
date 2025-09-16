@@ -3631,6 +3631,8 @@ MonoBehaviour:
     nextScene: StartUI
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
+    hasKey1: 0
+    hasKey2: 0
     lights: []
 --- !u!1 &1074641100
 GameObject:
@@ -3778,8 +3780,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 3
+  targetScenePath: Chapter1/school
+  targetSpawnIndex: 1
 --- !u!1 &1122434035
 GameObject:
   m_ObjectHideFlags: 0
