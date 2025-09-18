@@ -4,8 +4,12 @@ INCLUDE globals.ink
 <color=\#bd6d68>你好</color>
 
 #speaker:fishman #portrait:fishman 
-{random_number} 我是阿鯨船長
+我是阿鯨船長
+
+#speaker:default #portrait:default 
+{random_number} 我是神秘人
 你是誰
+
 
 #speaker:lucid #portrait:lucid
 我是路西
