@@ -3284,6 +3284,8 @@ MonoBehaviour:
     nextScene: StartUI
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
+    hasKey1: 0
+    hasKey2: 0
     lights: []
 --- !u!1 &1080257749
 GameObject:
@@ -4754,7 +4756,7 @@ GameObject:
   - component: {fileID: 1611684172}
   - component: {fileID: 1611684174}
   m_Layer: 0
-  m_Name: OneningAnimationDirector
+  m_Name: OpeningAnimationDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

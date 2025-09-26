@@ -5,8 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class saveData
 {
-    public int playerPosition = 0; 
+    public int playerPosition = 0;
     public string nextScene = "Scenes/Opening/BackMountain"; 
+    
+    public bool hasStartGame = false;
     public bool potPuzzleFinished = false;
     public bool fishPuzzleFinished = false;
 
