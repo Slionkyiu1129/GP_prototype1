@@ -32,6 +32,7 @@ INCLUDE globals.ink
     -> play_janken
 
 === win ===
+~talktofluor="true"
 #speaker:default #portrait:default 
 哇！你贏了欸！壽星果然有特別的運氣！
 #speaker:default #portrait:default 

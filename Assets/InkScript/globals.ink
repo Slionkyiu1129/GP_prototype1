@@ -15,7 +15,11 @@ VAR FlowerSonGetFlyer=""
 VAR SacredOfficialGetFlyer=""
 VAR CatGetFlyer=""
 VAR TrampGetFlyer=""
+VAR getphotokey=""
+VAR talktofluor=""
+VAR sawtree=""
 
+VAR getfountainkey=""
 
 VAR random_number = 4
 ~ random_number = RANDOM(1, 10) 
