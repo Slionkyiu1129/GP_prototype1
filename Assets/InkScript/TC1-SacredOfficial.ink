@@ -6,7 +6,7 @@ INCLUDE globals.ink
 
 ===noflyer===
 #speaker:default #portrait:default 
-小朋友來這裡做什麼，後山最近有重要的祭祀活動，請不要靠近。
+小朋友來這裡做什麼，後山最近在準備重要的祭祀活動，外人請不要靠近。
 ->END
 
 ===haveflyer===
@@ -18,6 +18,8 @@ INCLUDE globals.ink
 ===dontgiveflyer===
 #speaker:lucid #portrait:lucid
 沒什麼，只是在閒逛。
+#speaker:default #portrait:default 
+別在這裡逗留喔，要逛去鎮上逛！
 ->END
 
 ===giveflyer===
@@ -33,5 +35,5 @@ INCLUDE globals.ink
 ->END
 
 ===alreadygetflyer===
-希望他沒出什麼事。
+希望失蹤的人沒出什麼事。
 ->END
