@@ -32,5 +32,6 @@ public class checkFishCorrect : MonoBehaviour
     public void ForceSnapToCorrect()
     {
         transform.position = correctTriggerArea.transform.position;
+        // GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;  //這個方法不可行
     }
 }

@@ -328,33 +328,8 @@ public class DialogueManager : MonoBehaviour
     public void SetVariableState(string variableName, Ink.Runtime.Object value)
     {
         
-
-        // 如果有進行中的對話，同時更新故事變數
-        if (currentStory != null)
-        {
-            currentStory.variablesState[variableName] = value;
-        }
-        
-        // 無論是否有進行中的對話，都更新 dialogueVariables
-        if (dialogueVariables.variables.ContainsKey(variableName))
-        {
-            dialogueVariables.variables[variableName] = value;
-        }
-        else
-        {
-            // 檢查這個變數是否在預設變數中存在
-            if (dialogueVariables.variables.ContainsKey(variableName))
-            {
-                dialogueVariables.variables[variableName] = value;
-            }
-            else
-            {
-                dialogueVariables.variables.Add(variableName, value);
-            }
-        }
-        
-        // 同時保存變數狀態
-        dialogueVariables.SaveVariables();
+        dialogueVariables.variables[variableName] = value;
+        dialogueVariables.SaveVariables();     // 同時保存變數狀態
     }
 
     // This method will get called anytime the application exits.
