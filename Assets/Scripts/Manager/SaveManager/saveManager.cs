@@ -46,6 +46,8 @@ public class saveManager : MonoBehaviour
             currentSave = new saveData();
         }
     }
+
+    //MARK: Specific Variables
     
     public void SaveLightState(string lightName, bool isLightOn, bool isFirstSpriteActive)
     {
@@ -63,5 +65,23 @@ public class saveManager : MonoBehaviour
     public LightSaveData GetLightState(string lightName)
     {
         return currentSave.lights.Find(l => l.lightName == lightName);
+    }
+
+
+    public void SaveFishBagState(string fishBagName, Vector2 position)
+    {
+        FishBagItem fishBagData = currentSave.fishBags.Find(f => f.fishBagName == fishBagName);
+        if (fishBagData == null)
+        {
+            fishBagData = new FishBagItem();
+            fishBagData.fishBagName = fishBagName;
+            currentSave.fishBags.Add(fishBagData);
+        }
+        fishBagData.position = position;
+    }
+
+    public FishBagItem GetFishBagState(string fishBagName)
+    {
+        return currentSave.fishBags.Find(f => f.fishBagName == fishBagName);
     }
 }

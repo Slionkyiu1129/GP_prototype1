@@ -14,7 +14,15 @@ public class saveData
 
     public bool hasKey1 = false;
     public bool hasKey2 = false;
+    public List<FishBagItem> fishBags = new List<FishBagItem>();
     public List<LightSaveData> lights = new List<LightSaveData>();
+}
+
+[System.Serializable]
+public class FishBagItem
+{
+    public string fishBagName;
+    public Vector2 position;
 }
 
 [System.Serializable]

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pushed : MonoBehaviour
+public class fishPushed : MonoBehaviour
 {
+    public bool canBePush = true; //例如當通關後漁網不能被推動，外部控制可推動旗標
     private bool isMoving = false;
     public LayerMask obstacleLayer;
 
@@ -11,12 +12,18 @@ public class pushed : MonoBehaviour
 
     void Start()
     {
+        FishBagItem savedFishBag = saveManager.Instance.GetFishBagState(gameObject.name);
+        if (savedFishBag != null)
+        {
+            transform.position = savedFishBag.position;
+        }
+
         transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
     }
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !isMoving)
+        if (collision.gameObject.CompareTag("Player") && !isMoving && canBePush)
         {
             // 获取玩家的输入
             float moveX = Input.GetAxisRaw("Horizontal");
@@ -26,19 +33,19 @@ public class pushed : MonoBehaviour
             Vector2 pushDirection = new Vector2(moveX, moveY);
             // Debug.Log(pushDirection);
             Vector2 targetPosition = (Vector2)transform.position + pushDirection;
-            
+
 
 
             bool canPush = false;
             Vector2 playerPosition = collision.gameObject.transform.position; //取得玩家位置
 
-            if(pushDirection.x == 1 && playerPosition.y == transform.position.y)  //向右推
+            if (pushDirection.x == 1 && playerPosition.y == transform.position.y)  //向右推
                 canPush = true;
-            else if(pushDirection.x == -1 && playerPosition.y == transform.position.y)  //向左推
+            else if (pushDirection.x == -1 && playerPosition.y == transform.position.y)  //向左推
                 canPush = true;
-            else if(pushDirection.y == 1 && playerPosition.y == transform.position.y - 1.0f)  //向上推
+            else if (pushDirection.y == 1 && playerPosition.y == transform.position.y - 1.0f)  //向上推
                 canPush = true;
-            else if(pushDirection.y == -1 && playerPosition.y == transform.position.y + 1.0f)  //向下推
+            else if (pushDirection.y == -1 && playerPosition.y == transform.position.y + 1.0f)  //向下推
                 canPush = true;
 
             if (canPush)
@@ -49,14 +56,21 @@ public class pushed : MonoBehaviour
                     StartCoroutine(Move(targetPosition));
                 }
             }
+
         }
+        //transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
+        saveManager.Instance.SaveFishBagState(gameObject.name, transform.position);
+        saveManager.Instance.SaveGame();
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
+        transform.position = new Vector3(Mathf.Round(transform.position.x / 0.25f) * 0.25f, Mathf.Round(transform.position.y / 0.25f) * 0.25f, transform.position.z);
         if (collision.gameObject.CompareTag("Player") && !isMoving)
         {
             checkFishCorrectManager.CheckAllFishes();
+            saveManager.Instance.SaveFishBagState(gameObject.name, transform.position);
+            saveManager.Instance.SaveGame();
         }
     }
 
