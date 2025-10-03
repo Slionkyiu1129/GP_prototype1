@@ -43,6 +43,7 @@ INCLUDE globals.ink
 你這些東西從哪裡來的？
 #speaker:default #portrait:default 
 你說什麼？你說什麼？！不對！你想搶我東西！你想搶我的寶物！！
+#event:NPCExit
 #speaker:lucid #portrait:lucid
 不是，我只是想問你——
 #speaker:lucid #portrait:lucid
