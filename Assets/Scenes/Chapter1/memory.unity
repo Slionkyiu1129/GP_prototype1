@@ -4377,7 +4377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1207621309}
   openSprite: {fileID: -5868152126338816535, guid: 39f0fb9180b6143caaba2e7fc18f5287, type: 3}
-  targetSceneName: market
+  targetSceneName: secretBase
 --- !u!212 &1207621309
 SpriteRenderer:
   m_ObjectHideFlags: 0
