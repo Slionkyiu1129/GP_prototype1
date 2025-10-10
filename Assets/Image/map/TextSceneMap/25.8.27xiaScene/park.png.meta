@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 306ca4fc91d0e494089bd86417fe5fb2
+guid: 80fd0cbc6daaa43f9a23c0b398c84e9c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7216651109296135376
-    second: park_0
+      213: -250143871065014094
+    second: park 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,37 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: park_0
+      name: park 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -140,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 033a9723d0e49db90800000000000000
-      internalID: -7216651109296135376
+      spriteID: 2b0cd6e797f478cf0800000000000000
+      internalID: -250143871065014094
       vertices: []
       indices: 
       edges: []
@@ -157,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      park_0: -7216651109296135376
+      park 1_0: -250143871065014094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

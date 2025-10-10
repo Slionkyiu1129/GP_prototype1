@@ -90,6 +90,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter1/residentialArea.unity
     guid: 92503a4df716b41c4a46e98eeab57c05
   - enabled: 1
+    path: Assets/Scenes/Chapter1/beach.unity
+    guid: 468ec2239f8f1425bbb0621ca7a03e62
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/farmland.unity
+    guid: 40afbb7c0d16e458e95a709889c36449
+  - enabled: 1
+    path: Assets/Scenes/Chapter1/school.unity
+    guid: 0479054e935164494898f85ed4216d3e
+  - enabled: 1
     path: Assets/Scenes/Chapter1/secretBase.unity
     guid: 6e69bb956adb3450f8ed8b696606b31e
   - enabled: 1

@@ -1272,8 +1272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5072b407443bf4eb5b05d04a5bd767ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScenePath: Chapter1/CentralSquare
-  targetSpawnIndex: 1
+  targetScenePath: Chapter1/lucianHome
+  targetSpawnIndex: 2
 --- !u!4 &387539533
 Transform:
   m_ObjectHideFlags: 0
@@ -3284,6 +3284,8 @@ MonoBehaviour:
     nextScene: StartUI
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
+    hasKey1: 0
+    hasKey2: 0
     lights: []
 --- !u!1 &1080257749
 GameObject:
@@ -4754,7 +4756,7 @@ GameObject:
   - component: {fileID: 1611684172}
   - component: {fileID: 1611684174}
   m_Layer: 0
-  m_Name: OneningAnimationDirector
+  m_Name: OpeningAnimationDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
