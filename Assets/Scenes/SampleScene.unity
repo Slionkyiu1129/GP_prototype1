@@ -2282,7 +2282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ???
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9948cc199b1d47b8aacb7b315a594b0, type: 2}
   m_sharedMaterial: {fileID: 810768190337667378, guid: f9948cc199b1d47b8aacb7b315a594b0, type: 2}
@@ -3375,8 +3375,12 @@ MonoBehaviour:
   currentSave:
     playerPosition: 0
     nextScene: StartUI
+    hasStartGame: 0
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
+    hasKey1: 0
+    hasKey2: 0
+    fishBags: []
     lights: []
 --- !u!1 &1122434035
 GameObject:
