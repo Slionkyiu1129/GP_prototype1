@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ???
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9948cc199b1d47b8aacb7b315a594b0, type: 2}
   m_sharedMaterial: {fileID: 810768190337667378, guid: f9948cc199b1d47b8aacb7b315a594b0, type: 2}
@@ -3407,8 +3407,12 @@ MonoBehaviour:
   currentSave:
     playerPosition: 0
     nextScene: StartUI
+    hasStartGame: 0
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
+    hasKey1: 0
+    hasKey2: 0
+    fishBags: []
     lights: []
 --- !u!1 &1122434035
 GameObject:
@@ -6475,13 +6479,17 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8067827095897824, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2050179602595542694, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2050179602595542694, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2050179602595542694, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6517,12 +6525,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2525168154523732524, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_Name
-      value: npc
+      value: door
       objectReference: {fileID: 0}
     - target: {fileID: 2525168154523732524, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589850843131550486, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589850843131550486, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589850843131550486, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681298461884514560, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4209936514784141700, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642418784698900373, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568480445172514268, guid: 2675ffaf1d1a449448b06bdb9926ec29, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 9b2fd4cde20cd42319f12f5960966f05, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

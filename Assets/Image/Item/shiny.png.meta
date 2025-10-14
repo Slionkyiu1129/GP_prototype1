@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d478c761ce7534325a1e1b552033bb61
+guid: ba55b211bbe6849308191b5d6a1bb594
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -146465801595375023
-    second: none_dialog 1_0
+      213: 3588988167377316762
+    second: shiny_0
+  - first:
+      213: -2354898195116467516
+    second: shiny_1
+  - first:
+      213: 4460992339526661691
+    second: shiny_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +58,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 1193, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,22 +106,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: none_dialog 1_0
+      name: shiny_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1
-        height: 1
+        y: 19
+        width: 32
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1523a242126a7fdf0800000000000000
-      internalID: -146465801595375023
+      spriteID: a9bea9319b5aec130800000000000000
+      internalID: 3588988167377316762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shiny_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cadfdd7198b15fd0800000000000000
+      internalID: -2354898195116467516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shiny_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 17
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36b93fb5e0a8ed30800000000000000
+      internalID: 4460992339526661691
       vertices: []
       indices: 
       edges: []
@@ -124,14 +172,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      none_dialog 1_0: -146465801595375023
+      shiny_0: 3588988167377316762
+      shiny_1: -2354898195116467516
+      shiny_2: 4460992339526661691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

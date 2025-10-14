@@ -41,7 +41,7 @@ public class C1OperationUIOut : MonoBehaviour
         var spriteRenderer = operationUI.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
-            float duration = 6.0f; // 漸變時間
+            float duration = 3.5f; // 漸變時間
             float elapsed = 0f;
             color = spriteRenderer.color;
             float startAlpha = color.a;
