@@ -6,6 +6,9 @@ VAR fishmanHaveGetFlyer = ""
 VAR fishPuzzleFinished = ""   // 有通關的變數是 yes
 VAR flyerNum = -1
 
+
+VAR DoctorGetFlyer=""
+
 // TC1 發傳單變數
 VAR flowerShopOwnerGetFlyer=""
 VAR TroubleFriendGetFlyer=""
@@ -15,9 +18,11 @@ VAR FlowerSonGetFlyer=""
 VAR SacredOfficialGetFlyer=""
 VAR CatGetFlyer=""
 VAR TrampGetFlyer=""
+VAR getphotokey=""
+VAR talktofluor=""
+VAR sawtree=""
 
+VAR getfountainkey=""
 
 VAR random_number = 4
 ~ random_number = RANDOM(1, 10) 
-
-VAR EnterC1D1 = ""
