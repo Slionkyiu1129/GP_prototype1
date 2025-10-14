@@ -3629,7 +3629,6 @@ MonoBehaviour:
   currentSave:
     playerPosition: 0
     nextScene: StartUI
-    hasStartGame: 0
     potPuzzleFinished: 0
     fishPuzzleFinished: 0
     hasKey1: 0
@@ -5036,7 +5035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1540109800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6167,7 +6166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1970943210
 RectTransform:
   m_ObjectHideFlags: 0

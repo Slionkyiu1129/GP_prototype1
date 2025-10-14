@@ -61,37 +61,34 @@ public class PhotoAlbumManager : MonoBehaviour
             photoPreviewPanel.SetActive(false);
     }
 
-
-//     [ContextMenu("Generate Initial JSON")]
-//     public void GenerateInitialJSON()
-//     {
-//         if (string.IsNullOrEmpty(_savePath))
-//             _savePath = Path.Combine(Application.persistentDataPath, "photoAlbum.json");
-
-//         // 下面就照原本寫法
-//         var album = new PhotoAlbumJSON();
-//         album.photos = new List<PhotoDataJSON>();
-
-//         for (int i = 1; i <= 9; i++)
-//         {
-//             album.photos.Add(new PhotoDataJSON
-//             {
-//                 id = i,
-//                 name = $"照片 {i}",
-//                 imagePath = $"Photos/photo{i}",
-//                 description = $"這是照片 {i} 的描述。",
-//                 unlocked = false,
-//             });
-//         }
-
-//         string json = JsonUtility.ToJson(album, true);
-//         File.WriteAllText(_savePath, json);
-
-// #if UNITY_EDITOR
-//         Debug.Log($"✅ 已生成初始 JSON，路徑：{_savePath}\n{json}");
-// #endif
-//     }
-
+    /*
+        [ContextMenu("Generate Initial JSON")]
+        public void GenerateInitialJSON()
+        {
+            var album = new PhotoAlbumJSON();
+            album.photos = new List<PhotoDataJSON>();
+    
+            for (int i = 1; i <= 9; i++) // 預設 9 張
+            {
+                album.photos.Add(
+                    new PhotoDataJSON
+                    {
+                        id = i,
+                        name = $"照片 {i}",
+                        imagePath = $"Photos/photo{i}", // 對應 Resources/Photos/photo1.png ...
+                        description = $"這是照片 {i} 的描述。",
+                        unlocked = false,
+                    }
+                );
+            }
+    
+            string json = JsonUtility.ToJson(album, true);
+            File.WriteAllText(_savePath, json);
+    
+    #if UNITY_EDITOR
+            Debug.Log($"✅ 已生成初始 JSON，路徑：{_savePath}\n{json}");
+    #endif
+        } */
 
     private void Update()
     {

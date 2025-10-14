@@ -15,7 +15,6 @@ public class portalSceneSwitch : MonoBehaviour
             saveManager.Instance.currentSave.playerPosition = targetSpawnIndex;
             saveManager.Instance.currentSave.nextScene = "Scenes/"+targetScenePath;
             saveManager.Instance.SaveGame();
-            DialogueManager.GetInstance().OnApplicationQuit();
             SceneTransitionManager.Instance.SwitchScene("Scenes/"+targetScenePath);
         }
     }

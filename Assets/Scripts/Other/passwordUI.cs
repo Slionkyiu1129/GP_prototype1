@@ -50,12 +50,6 @@ public class PasswordUI : MonoBehaviour
                 Debug.Log("密碼正確");
                 panel.SetActive(false);
                 // TODO: 在這裡放傳送場景或換圖片
-                // 找到場景中的門，呼叫開門
-                doorMemory door = FindObjectOfType<doorMemory>();
-                if (door != null)
-                {
-                    door.OpenDoor();
-                }
             }
             else
             {

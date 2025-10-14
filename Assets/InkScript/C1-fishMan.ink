@@ -8,7 +8,7 @@ INCLUDE globals.ink
 你好 #speaker:lucid #portrait:lucid
 // <color=\#bd6d68>你好</color> #speaker:lucid #portrait:lucid
 // 測試用文字：如要變更偏好的搜尋主題，請修改搜尋設定。你選擇的主題會儲存在每台已登入 Google 帳戶的電腦上。
-+{haveGetFlyer == "true" && have_talk_fishman == "" && fishPuzzleFinished == ""}[給尋人啟示]-> flyer 
++{haveGetFlyer == "true" && have_talk_fishman == ""}[給尋人啟示]-> flyer 
 +{fishPuzzleFinished == "" && haveGetFlyer == "true" && have_talk_fishman == "true"}[給尋人啟示] -> alreadyTalkFirst
 +{haveGetFlyer == "true" &&fishPuzzleFinished == "yes" && have_talk_fishman_ApassPuzzle == ""}[給尋人啟示] -> passPuzzle
 +{haveGetFlyer == "true" && fishPuzzleFinished == "yes" && have_talk_fishman_ApassPuzzle == "true"}[給尋人啟示] -> passPuzzleTalkAready
@@ -38,6 +38,7 @@ INCLUDE globals.ink
 ~ have_talk_fishman_ApassPuzzle = "true"
 ~ flyerNum = flyerNum-1
 謝謝你幫我整理漁貨 #speaker:fishman #portrait:fishman
+你剛剛說什麼再說一次？
 我有一張尋人啟事要給你～ #speaker:lucid #portrait:lucid
 好！那我再幫你注意上面的人！ #speaker:fishman #portrait:fishman
 -> END

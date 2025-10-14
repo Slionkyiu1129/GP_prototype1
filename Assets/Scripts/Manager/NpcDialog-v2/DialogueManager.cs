@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
     private bool hasAddedFlyer = false;
     private int lastFlyerNum = -1;
     private int flyerNum = 0;
-    private const string EVENT_TAG = "event";
+
     private bool autoDialogueMode = false;
 
     public void SetAutoDialogueMode(bool isAuto)
@@ -100,7 +100,7 @@ public class DialogueManager : MonoBehaviour
         // {
         //     ContinueStory();
         // }
-
+        
         // if (autoDialogueMode && canContinueToNextLine && currentStory.currentChoices.Count == 0)
         // {
         //     ContinueStory();
@@ -131,12 +131,12 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         dialogueVariables.StopListening(currentStory);
-
+        
 
         OpenCloseAnimator.GetComponent<PlayableDirector>().Play();
-
+        
         yield return new WaitForSeconds(0.25f);
-        autoDialogueMode = false;
+        autoDialogueMode = false; 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -195,9 +195,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void HideChoices()
+    private void HideChoices() 
     {
-        foreach (GameObject choiceButton in choices)
+        foreach (GameObject choiceButton in choices) 
         {
             choiceButton.SetActive(false);
         }
@@ -228,7 +228,7 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(ExitDialogueMode());
         }
     }
-
+    
 
     private void HandleTags(List<string> currentTags)
     {
@@ -259,32 +259,13 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log("layout=" + tagValue);
                     //layoutAnimator.Play(tagValue);
                     break;
-                case EVENT_TAG:
-                    TriggerEvent(tagValue); // 👈 新增事件呼叫
-                    break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
             }
         }
     }
-    //---Tramp Move Away Event---
-    private void TriggerEvent(string eventName)
-    {
-        switch (eventName)
-        {
-            case "NPCExit":
-                GameObject npc = GameObject.FindWithTag("Npc"); // 或你自己指定 NPC
-                if (npc != null)
-                {
-                    npc.GetComponent<NPCmoveaway>().StartMoveUp();
-                }
-                break;
-            default:
-                Debug.Log("Unhandled event: " + eventName);
-                break;
-        }
-    }
+
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
@@ -324,7 +305,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        if (canContinueToNextLine)
+        if (canContinueToNextLine) 
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
             // NOTE: The below two lines were added to fix a bug after the Youtube video was made
@@ -346,9 +327,34 @@ public class DialogueManager : MonoBehaviour
 
     public void SetVariableState(string variableName, Ink.Runtime.Object value)
     {
+        
 
-        dialogueVariables.variables[variableName] = value;
-        dialogueVariables.SaveVariables();     // 同時保存變數狀態
+        // 如果有進行中的對話，同時更新故事變數
+        if (currentStory != null)
+        {
+            currentStory.variablesState[variableName] = value;
+        }
+        
+        // 無論是否有進行中的對話，都更新 dialogueVariables
+        if (dialogueVariables.variables.ContainsKey(variableName))
+        {
+            dialogueVariables.variables[variableName] = value;
+        }
+        else
+        {
+            // 檢查這個變數是否在預設變數中存在
+            if (dialogueVariables.variables.ContainsKey(variableName))
+            {
+                dialogueVariables.variables[variableName] = value;
+            }
+            else
+            {
+                dialogueVariables.variables.Add(variableName, value);
+            }
+        }
+        
+        // 同時保存變數狀態
+        dialogueVariables.SaveVariables();
     }
 
     // This method will get called anytime the application exits.
@@ -371,9 +377,9 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         int.TryParse(flyerNumObj.ToString(), out flyerNum);
-
+        
         Debug.Log("Check1_hasAddedFlyer =" + hasAddedFlyer);
-
+        
         bool shouldAddFlyer = (hasGetFlyerObj != null && hasGetFlyerObj.ToString().ToLower() == "true");
 
         if (flyerNum > 0 && shouldAddFlyer && !hasAddedFlyer)
