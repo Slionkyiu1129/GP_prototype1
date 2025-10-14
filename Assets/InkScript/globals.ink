@@ -26,3 +26,6 @@ VAR getfountainkey=""
 
 VAR random_number = 4
 ~ random_number = RANDOM(1, 10) 
+
+
+VAR EnterC1D1 = ""
