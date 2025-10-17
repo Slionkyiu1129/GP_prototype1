@@ -47,9 +47,16 @@ public class DialogueManager : MonoBehaviour
 
     private bool autoDialogueMode = false;
 
+    private bool sceneSwitchAfterDialog = false;
+
     public void SetAutoDialogueMode(bool isAuto)
     {
         autoDialogueMode = isAuto;
+    }
+
+    public void SetSceneSwitchAfterDialog(bool isSwitch)
+    {
+        sceneSwitchAfterDialog = isSwitch;
     }
 
     private void Awake()
@@ -140,6 +147,16 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
+        if (sceneSwitchAfterDialog)
+        {
+            sceneSwitchAfterDialog = false;
+            portalSceneSwitch_Dialog portalSwitch = FindObjectOfType<portalSceneSwitch_Dialog>();
+            if (portalSwitch != null)
+            {
+                portalSwitch.SwitchSceneAfterDialogue();
+            }
+        }
     }
 
     private IEnumerator DisplayLine(string line)
